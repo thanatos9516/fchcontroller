@@ -40,6 +40,11 @@ public function ventasultimos_12meses(){
 	$sql=" SELECT DATE_FORMAT(fecha_hora,'%M') AS fecha, SUM(total_venta) AS total FROM venta GROUP BY MONTH(fecha_hora) ORDER BY fecha_hora DESC LIMIT 0,12";
 	return ejecutarConsulta($sql);
 }
+    
+public function totalinventario(){
+    $sql="select count(*) from articulo";
+    return ejecutarConsulta($sql);
+}
 
 
 }

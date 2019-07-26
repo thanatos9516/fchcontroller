@@ -68,7 +68,25 @@ if ($_SESSION['escritorio']==1) {
 <!--box-header-->
 <!--centro-->
 <div class="panel-body">
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+  <div class="small-box bg-yellow">
+    <div class="inner">
+      <h4 style="font-size: 17px;">
+        <?php
+							$product=mysqli_query($conexion,"select * from articulo");
+                            $nro_prod=mysqli_num_rows($product); 	
+						?>  
+        <strong>S/. <?php echo $nro_prod; ?> </strong>
+      </h4>
+      <p>Total Inventario</p>
+    </div>
+    <div class="icon">
+      <i class="ion ion-bag"></i>
+    </div>
+    <a href="articulo.php" class="small-box-footer">Inventario <i class="fa fa-arrow-circle-right"></i></a>
+  </div>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
   <div class="small-box bg-aqua">
     <div class="inner">
       <h4 style="font-size: 17px;">
@@ -82,7 +100,7 @@ if ($_SESSION['escritorio']==1) {
     <a href="ingreso.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
   <div class="small-box bg-green">
     <div class="inner">
       <h4 style="font-size: 17px;">
