@@ -16,11 +16,11 @@ require('Factura.php');
 //establecemos los datos de la empresa
 $logo="logo.png";
 $ext_logo="png";
-$empresa="Tecnology Center S.A.C.";
+$empresa="FCH Maintenance";
 $documento="1074528547";
-$direccion="Calle los alpes 120";
-$telefono="958524158";
-$email="angelinos257@gmail.com";
+$direccion="13-4 Alliance Blvd. Suite 111 Barrie, On L4M 1L2";
+$telefono="1-800-678-0502";
+$email="fchmaintenance@gmail.com";
 
 //obtenemos los datos de la cabecera de la venta actual
 require_once "../modelos/Venta.php";
@@ -95,12 +95,12 @@ $total=$regv->total_venta;
 $V=new EnLetras(); 
 $V->substituir_un_mil_por_mil = true;
 
- $con_letra=strtoupper($V->ValorEnLetras($total," SOLES")); 
+ $con_letra=strtoupper($V->ValorEnLetras($total," Dolares")); 
 $pdf->addCadreTVAs("---".$con_letra);
 
 
 //mostramos el impuesto
-$pdf->addTVAs( $regv->impuesto, $regv->total_venta, "S/ ");
+$pdf->addTVAs( $regv->impuesto, $regv->total_venta, "$/ ");
 $pdf->addCadreEurosFrancs("IGV"." $regv->impuesto %");
 $pdf->Output('Reporte de Venta' ,'I');
 

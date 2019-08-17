@@ -30,11 +30,11 @@ $rspta = $venta->ventacabecera($_GET["id"]);
 $reg=$rspta->fetch_object();
 
 //establecemos los datos de la empresa
-$empresa = "Tecnology S.A.C.";
+$empresa = "FCH Maintenance";
 $documento = "102589524";
-$direccion = "calle los alpes 120";
-$telefono = "854715648";
-$email = "angelinos257@gmail.com";
+$direccion = "13-4 Alliance Blvd. Suite 111 Barrie, On L4M 1L2";
+$telefono = "1-800-678-0502";
+$email = "fchmaintenance@gmail.com";
 	 ?>
 <div class="zona_impresion">
 	<!--codigo imprimir-->
@@ -100,7 +100,7 @@ $email = "angelinos257@gmail.com";
 		<tr>
 			<td>&nbsp;</td>
 			<td align="right"><b>TOTAL:</b></td>
-			<td align="right"><b>S/. <?php echo $reg->total_venta; ?></b></td>
+			<td align="right"><b>$/. <?php echo $reg->total_venta; ?></b></td>
 		</tr>
 		<tr>
 			<td colspan="3">N° de articulos: <?php echo $cantidad; ?> </td>
@@ -112,10 +112,10 @@ $email = "angelinos257@gmail.com";
 			<td colspan="3" align="center">¡Gracias por su compra!</td>
 		</tr>
 		<tr>
-			<td colspan="3" align="center">AngshelinoWeb</td>
+			<td colspan="3" align="center">JmSoftcr</td>
 		</tr>
 		<tr>
-			<td colspan="3" align="center">Arequipa - Peru</td>
+			<td colspan="3" align="center">Costa Rica - San José</td>
 		</tr>
 	</table>
 	<br>
