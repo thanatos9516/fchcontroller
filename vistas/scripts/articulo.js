@@ -123,7 +123,7 @@ function mostrar(idarticulo){
 
 //funcion para desactivar
 function desactivar(idarticulo){
-	bootbox.confirm("¿Esta seguro de desactivar este dato?", function(result){
+	bootbox.confirm("¿Are you sure to disable this data??", function(result){
 		if (result) {
 			$.post("../ajax/articulo.php?op=desactivar", {idarticulo : idarticulo}, function(e){
 				bootbox.alert(e);
@@ -134,7 +134,7 @@ function desactivar(idarticulo){
 }
 
 function activar(idarticulo){
-	bootbox.confirm("¿Esta seguro de activar este dato?" , function(result){
+	bootbox.confirm("¿Are you sure to activate this data??" , function(result){
 		if (result) {
 			$.post("../ajax/articulo.php?op=activar" , {idarticulo : idarticulo}, function(e){
 				bootbox.alert(e);

@@ -175,7 +175,7 @@ function mostrar(idingreso){
 
 //funcion para desactivar
 function anular(idingreso){
-	bootbox.confirm("¿Esta seguro de desactivar este dato?", function(result){
+	bootbox.confirm("¿Are you sure to disable this data??", function(result){
 		if (result) {
 			$.post("../ajax/ingreso.php?op=anular", {idingreso : idingreso}, function(e){
 				bootbox.alert(e);
@@ -224,7 +224,7 @@ function agregarDetalle(idarticulo,articulo){
 		modificarSubtotales();
 
 	}else{
-		alert("error al ingresar el detalle, revisar las datos del articulo ");
+		alert("error when entering the detail, review the data of the article ");
 	}
 }
 

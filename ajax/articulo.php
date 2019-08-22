@@ -25,21 +25,21 @@ switch ($_GET["op"]) {
 	}
 	if (empty($idarticulo)) {
 		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
-		echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
+		echo $rspta ? "Data registered correctly" : "Could not register data";
 	}else{
          $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen);
-		echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
+		echo $rspta ? "Data updated successfully" : "Could not update data";
 	}
 		break;
 	
 
 	case 'desactivar':
 		$rspta=$articulo->desactivar($idarticulo);
-		echo $rspta ? "Datos desactivados correctamente" : "No se pudo desactivar los datos";
+		echo $rspta ? "Data deactivated correctly" : "Could not activate data";
 		break;
 	case 'activar':
 		$rspta=$articulo->activar($idarticulo);
-		echo $rspta ? "Datos activados correctamente" : "No se pudo activar los datos";
+		echo $rspta ? "Data activated correctly" : "Could not activate data";
 		break;
 	
 	case 'mostrar':
@@ -60,7 +60,7 @@ switch ($_GET["op"]) {
             "4"=>$reg->stock,
             "5"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
             "6"=>$reg->descripcion,
-            "7"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':'<span class="label bg-red">Desactivado</span>'
+            "7"=>($reg->condicion)?'<span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
               );
 		}
 		$results=array(

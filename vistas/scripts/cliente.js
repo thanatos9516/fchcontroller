@@ -112,7 +112,7 @@ function mostrar(idpersona){
 
 //funcion para desactivar
 function eliminar(idpersona){
-	bootbox.confirm("¿Esta seguro de eliminar este dato?", function(result){
+	bootbox.confirm("¿Are you sure to delete this data??", function(result){
 		if (result) {
 
 			$.post("../ajax/persona.php?op=eliminar", {idpersona : idpersona }, function(e){

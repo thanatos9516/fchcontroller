@@ -22,7 +22,7 @@ switch ($_GET["op"]) {
             "4"=>$reg->serie_comprobante.' '.$reg->num_comprobante,
             "5"=>$reg->total_compra,
             "6"=>$reg->impuesto,
-            "7"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Aceptado</span>':'<span class="label bg-red">Anulado</span>'
+            "7"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Accepted</span>':'<span class="label bg-red">Canceled</span>'
               );
 		}
 		$results=array(
@@ -50,7 +50,7 @@ switch ($_GET["op"]) {
             "4"=>$reg->serie_comprobante.' '.$reg->num_comprobante,
             "5"=>$reg->total_venta,
             "6"=>$reg->impuesto,
-            "7"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Aceptado</span>':'<span class="label bg-red">Anulado</span>'
+            "7"=>($reg->estado=='Aceptado')?'<span class="label bg-green">Accepted</span>':'<span class="label bg-red">Canceled</span>'
               );
         }
         $results=array(

@@ -175,7 +175,7 @@ function mostrar(idventa){
 
 //funcion para desactivar
 function anular(idventa){
-	bootbox.confirm("¿Esta seguro de desactivar este dato?", function(result){
+	bootbox.confirm("¿Are you sure to disable this data??", function(result){
 		if (result) {
 			$.post("../ajax/venta.php?op=anular", {idventa : idventa}, function(e){
 				bootbox.alert(e);
@@ -223,7 +223,7 @@ function agregarDetalle(idarticulo,articulo,precio_venta){
 		modificarSubtotales();
 
 	}else{
-		alert("error al ingresar el detalle, revisar las datos del articulo ");
+		alert("error when entering the detail, review the data of the article ");
 	}
 }
 

@@ -30,54 +30,54 @@ if ($_SESSION['acceso']==1) {
     <thead>
       <th>Options</th>
       <th>Name</th>
-      <th>Documento</th>
-      <th>Numero Documento</th>
-      <th>Telefono</th>
+      <th>Document</th>
+      <th>Document Number</th>
+      <th>Phone</th>
       <th>Email</th>
       <th>Login</th>
-      <th>Foto</th>
-      <th>Estado</th>
+      <th>Image</th>
+      <th>Status</th>
     </thead>
     <tbody>
     </tbody>
     <tfoot>
-      <th>Opciones</th>
-      <th>Nombre</th>
-      <th>Documento</th>
+      <th>Options</th>
+      <th>Name</th>
+      <th>Document</th>
       <th>Numero Documento</th>
-      <th>Telefono</th>
+      <th>Phone</th>
       <th>Email</th>
       <th>Login</th>
-      <th>Foto</th>
-      <th>Estado</th>
+      <th>Image</th>
+      <th>Status</th>
     </tfoot>   
   </table>
 </div>
 <div class="panel-body" id="formularioregistros">
   <form action="" name="formulario" id="formulario" method="POST">
     <div class="form-group col-lg-12 col-md-12 col-xs-12">
-      <label for="">Nombre(*):</label>
+      <label for="">Name(*):</label>
       <input class="form-control" type="hidden" name="idusuario" id="idusuario">
       <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Tipo Documento(*):</label>
+      <label for="">Type Document(*):</label>
      <select name="tipo_documento" id="tipo_documento" class="form-control select-picker" required>
        <option value="DNI">DNI</option>
        <option value="RUC">RUC</option>
-       <option value="CEDULA">CEDULA</option>
+       <option value="CEDULA">IDENTIFICATION CARD</option>
      </select>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Numero de Documento(*):</label>
+      <label for="">Document number(*):</label>
       <input type="text" class="form-control" name="num_documento" id="num_documento" placeholder="Documento" maxlength="20">
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Direccion</label>
+      <label for="">Address</label>
       <input class="form-control" type="text" name="direccion" id="direccion"  maxlength="70">
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Telefono</label>
+      <label for="">Phone</label>
       <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" placeholder="Número de telefono">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
@@ -85,7 +85,7 @@ if ($_SESSION['acceso']==1) {
       <input class="form-control" type="email" name="email" id="email" maxlength="70" placeholder="email">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Cargo</label>
+      <label for="">Position</label>
       <input class="form-control" type="text" name="cargo" id="cargo" maxlength="20" placeholder="Cargo">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
@@ -93,24 +93,24 @@ if ($_SESSION['acceso']==1) {
       <input class="form-control" type="text" name="login" id="login" maxlength="20" placeholder="nombre de usuario" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Clave(*):</label>
+      <label for="">Password(*):</label>
       <input class="form-control" type="password" name="clave" id="clave" maxlength="64" placeholder="Clave">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label>Permisos</label>
+      <label>Permissions</label>
       <ul id="permisos" style="list-style: none;">
         
       </ul>
     </div>
         <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Imagen:</label>
+      <label for="">Image:</label>
       <input class="form-control" type="file" name="imagen" id="imagen">
       <input type="hidden" name="imagenactual" id="imagenactual">
       <img src="" alt="" width="150px" height="120" id="imagenmuestra">
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
-      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Save</button>
+      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancel</button>
     </div>
   </form>
 </div>

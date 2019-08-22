@@ -133,7 +133,7 @@ function mostrar(idusuario){
 
 //funcion para desactivar
 function desactivar(idusuario){
-	bootbox.confirm("¿Esta seguro de desactivar este dato?", function(result){
+	bootbox.confirm("¿Are you sure to disable this data??", function(result){
 		if (result) {
 			$.post("../ajax/usuario.php?op=desactivar", {idusuario : idusuario}, function(e){
 				bootbox.alert(e);
@@ -144,7 +144,7 @@ function desactivar(idusuario){
 }
 
 function activar(idusuario){
-	bootbox.confirm("¿Esta seguro de activar este dato?" , function(result){
+	bootbox.confirm("¿Are you sure to activate this data??" , function(result){
 		if (result) {
 			$.post("../ajax/usuario.php?op=activar", {idusuario : idusuario}, function(e){
 				bootbox.alert(e);
