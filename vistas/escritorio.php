@@ -78,12 +78,12 @@ if ($_SESSION['escritorio']==1) {
 						?>  
         <strong>#/. <?php echo $nro_prod; ?> </strong>
       </h4>
-      <p>Total Inventario</p>
+      <p>Total Inventory</p>
     </div>
     <div class="icon">
       <i class="ion ion-bag"></i>
     </div>
-    <a href="articulo.php" class="small-box-footer">Inventario <i class="fa fa-arrow-circle-right"></i></a>
+    <a href="articulo.php" class="small-box-footer">Inventory <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -92,12 +92,12 @@ if ($_SESSION['escritorio']==1) {
       <h4 style="font-size: 17px;">
         <strong>$/. <?php echo $totalc; ?> </strong>
       </h4>
-      <p>Compras</p>
+      <p>Purchases</p>
     </div>
     <div class="icon">
       <i class="ion ion-bag"></i>
     </div>
-    <a href="ingreso.php" class="small-box-footer">Compras <i class="fa fa-arrow-circle-right"></i></a>
+    <a href="ingreso.php" class="small-box-footer">Purchases <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -106,12 +106,12 @@ if ($_SESSION['escritorio']==1) {
       <h4 style="font-size: 17px;">
         <strong>$/. <?php echo $totalv; ?> </strong>
       </h4>
-      <p>Ventas</p>
+      <p>Sales</p>
     </div>
     <div class="icon">
       <i class="ion ion-bag"></i>
     </div>
-    <a href="venta.php" class="small-box-footer">Ventas <i class="fa fa-arrow-circle-right"></i></a>
+    <a href="venta.php" class="small-box-footer">Sales <i class="fa fa-arrow-circle-right"></i></a>
   </div>
 </div>
 </div>
@@ -119,7 +119,7 @@ if ($_SESSION['escritorio']==1) {
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
   <div class="box box-primary">
     <div class="box-header with-border">
-      Compras de los ultimos 10 dias
+      Purchases from the last 10 days
     </div>
     <div class="box-body">
       <canvas id="compras" width="400" height="300"></canvas>
@@ -129,7 +129,7 @@ if ($_SESSION['escritorio']==1) {
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
   <div class="box box-primary">
     <div class="box-header with-border">
-      Ventas de los ultimos 12 meses
+      Sales of the last 12 months
     </div>
     <div class="box-body">
       <canvas id="ventas" width="400" height="300"></canvas>
@@ -162,7 +162,7 @@ var compras = new Chart(ctx, {
     data: {
         labels: [<?php echo $fechasc ?>],
         datasets: [{
-            label: '# Compras en S/. de los últimos 10 dias',
+            label: '# Purchases in $ from the last 10 days ',
             data: [<?php echo $totalesc ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -207,7 +207,7 @@ var ventas = new Chart(ctx, {
     data: {
         labels: [<?php echo $fechasv ?>],
         datasets: [{
-            label: '# Ventas en S/. de los últimos 12 meses',
+            label: '# Sales in $ of the last 12 months',
             data: [<?php echo $totalesv ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

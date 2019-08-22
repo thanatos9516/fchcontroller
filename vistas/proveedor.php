@@ -18,7 +18,7 @@ if ($_SESSION['compras']==1) {
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Proveedor <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
+  <h1 class="box-title">Supplier <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i>Add</button></h1>
   <div class="box-tools pull-right">
     
   </div>
@@ -28,21 +28,21 @@ if ($_SESSION['compras']==1) {
 <div class="panel-body table-responsive" id="listadoregistros">
   <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
     <thead>
-      <th>Opciones</th>
-      <th>Nombre</th>
-      <th>Documento</th>
-      <th>Numero</th>
-      <th>Telefono</th>
+      <th>Option</th>
+      <th>Name</th>
+      <th>Document</th>
+      <th>Number</th>
+      <th>Phone</th>
       <th>Email</th>
     </thead>
     <tbody>
     </tbody>
     <tfoot>
-      <th>Opciones</th>
-      <th>Nombre</th>
-      <th>Documento</th>
-      <th>Numero</th>
-      <th>Telefono</th>
+      <th>Option</th>
+      <th>Name</th>
+      <th>Document</th>
+      <th>Number</th>
+      <th>Phone</th>
       <th>Email</th>
     </tfoot>   
   </table>
@@ -50,29 +50,29 @@ if ($_SESSION['compras']==1) {
 <div class="panel-body" style="height: 400px;" id="formularioregistros">
   <form action="" name="formulario" id="formulario" method="POST">
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Nombre</label>
+      <label for="">Name</label>
       <input class="form-control" type="hidden" name="idpersona" id="idpersona">
       <input class="form-control" type="hidden" name="tipo_persona" id="tipo_persona" value="Proveedor">
       <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre del proveedor" required>
     </div>
      <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Tipo Dcumento</label>
+      <label for="">Type Document</label>
      <select class="form-control select-picker" name="tipo_documento" id="tipo_documento" required>
        <option value="DNI">DNI</option>
        <option value="RUC">RUC</option>
-       <option value="CEDULA">CEDULA</option>
+       <option value="CEDULA">IDENTIFICATION CARD</option>
      </select>
     </div>
      <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Número Documento</label>
+      <label for="">Document Number</label>
       <input class="form-control" type="text" name="num_documento" id="num_documento" maxlength="20" placeholder="Número de Documento">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Direccion</label>
+      <label for="">Address</label>
       <input class="form-control" type="text" name="direccion" id="direccion" maxlength="70" placeholder="Direccion">
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Telefono</label>
+      <label for="">Phone</label>
       <input class="form-control" type="text" name="telefono" id="telefono" maxlength="20" placeholder="Número de Telefono">
     </div>
         <div class="form-group col-lg-6 col-md-6 col-xs-12">
@@ -80,9 +80,9 @@ if ($_SESSION['compras']==1) {
       <input class="form-control" type="email" name="email" id="email" maxlength="50" placeholder="Email">
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
+      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Save</button>
 
-      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancel</button>
     </div>
   </form>
 </div>

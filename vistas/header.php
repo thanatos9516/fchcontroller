@@ -8,7 +8,7 @@ if (strlen(session_id())<1)
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>FCH CONTROLLER | Escritorio</title>
+  <title>FCH CONTROLLER | Home</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -44,7 +44,7 @@ if (strlen(session_id())<1)
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">NAVEGACIÓM</span>
+        <span class="sr-only">NAVIGATION</span>
       </a>
 
       <div class="navbar-custom-menu">
@@ -67,10 +67,10 @@ if (strlen(session_id())<1)
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Salir</a>
+                  <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Exit</a>
                 </div>
               </li>
             </ul>
@@ -94,7 +94,7 @@ if (strlen(session_id())<1)
 <br>
        <?php 
 if ($_SESSION['escritorio']==1) {
-  echo ' <li><a href="escritorio.php"><i class="fa  fa-dashboard (alias)"></i> <span>Escritorio</span></a>
+  echo ' <li><a href="escritorio.php"><i class="fa  fa-dashboard (alias)"></i> <span>Home</span></a>
         </li>';
 }
         ?>
@@ -102,14 +102,14 @@ if ($_SESSION['escritorio']==1) {
 if ($_SESSION['almacen']==1) {
   echo ' <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i> <span>Almacen</span>
+            <i class="fa fa-laptop"></i> <span>Warehouse</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Articulos</a></li>
-            <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorias</a></li>
+            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Manufactures</a></li>
+            <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Category</a></li>
           </ul>
         </li>';
 }
@@ -118,14 +118,14 @@ if ($_SESSION['almacen']==1) {
 if ($_SESSION['compras']==1) {
   echo ' <li class="treeview">
           <a href="#">
-            <i class="fa fa-th"></i> <span>Compras</span>
+            <i class="fa fa-th"></i> <span>Purchases</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-            <li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
+            <li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Product Entry</a></li>
+            <li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Suppliers</a></li>
           </ul>
         </li>';
 }
@@ -135,14 +135,14 @@ if ($_SESSION['compras']==1) {
 if ($_SESSION['ventas']==1) {
   echo '<li class="treeview">
           <a href="#">
-            <i class="fa fa-shopping-cart"></i> <span>Ventas</span>
+            <i class="fa fa-shopping-cart"></i> <span>Sales</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="venta.php"><i class="fa fa-circle-o"></i> ventas</a></li>
-            <li><a href="cliente.php"><i class="fa fa-circle-o"></i> clientes</a></li>
+            <li><a href="venta.php"><i class="fa fa-circle-o"></i> Sales</a></li>
+            <li><a href="cliente.php"><i class="fa fa-circle-o"></i> Customers</a></li>
           </ul>
         </li>';
 }
@@ -152,14 +152,14 @@ if ($_SESSION['ventas']==1) {
 if ($_SESSION['acceso']==1) {
   echo '  <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Acceso</span>
+            <i class="fa fa-folder"></i> <span>Access</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-            <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
+            <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Users</a></li>
+            <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permissions</a></li>
           </ul>
         </li>';
 }
@@ -168,13 +168,13 @@ if ($_SESSION['acceso']==1) {
 if ($_SESSION['consultac']==1) {
   echo '     <li class="treeview">
           <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
+            <i class="fa fa-bar-chart"></i> <span>Check Purchases</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i>Compras por fechas</a></li>
+            <li><a href="comprasfecha.php"><i class="fa fa-circle-o"></i>Purchases by dates</a></li>
           </ul>
         </li>';
 }
@@ -184,13 +184,13 @@ if ($_SESSION['consultac']==1) {
 if ($_SESSION['consultav']==1) {
   echo '<li class="treeview">
           <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Consulta Ventas</span>
+            <i class="fa fa-bar-chart"></i> <span>Consult Sales</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="ventasfechacliente.php"><i class="fa fa-circle-o"></i> Consulta Ventas</a></li>
+            <li><a href="ventasfechacliente.php"><i class="fa fa-circle-o"></i> Consult Sales</a></li>
 
           </ul>
         </li>';
@@ -198,8 +198,8 @@ if ($_SESSION['consultav']==1) {
         ?>     
             
         
-        <li><a href="#"><i class="fa fa-question-circle"></i> <span>Ayuda</span><small class="label pull-right bg-yellow">PDF</small></a></li>
-        <li><a href="#"><i class="fa  fa-exclamation-circle"></i> <span>Ayuda</span><small class="label pull-right bg-yellow">IT</small></a></li>
+        <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help</span><small class="label pull-right bg-yellow">PDF</small></a></li>
+        <li><a href="#"><i class="fa  fa-exclamation-circle"></i> <span>Help</span><small class="label pull-right bg-yellow">IT</small></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

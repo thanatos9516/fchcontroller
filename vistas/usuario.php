@@ -18,7 +18,7 @@ if ($_SESSION['acceso']==1) {
         <div class="col-md-12">
       <div class="box">
 <div class="box-header with-border">
-  <h1 class="box-title">Usuarios <button class="btn btn-success" onclick="mostrarform(true)" id="btnagregar"><i class="fa fa-plus-circle"></i>Agregar</button></h1>
+  <h1 class="box-title">Users <button class="btn btn-success" onclick="mostrarform(true)" id="btnagregar"><i class="fa fa-plus-circle"></i>Add</button></h1>
   <div class="box-tools pull-right">
     
   </div>
@@ -28,8 +28,8 @@ if ($_SESSION['acceso']==1) {
 <div class="panel-body table-responsive" id="listadoregistros">
   <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
     <thead>
-      <th>Opciones</th>
-      <th>Nombre</th>
+      <th>Options</th>
+      <th>Name</th>
       <th>Documento</th>
       <th>Numero Documento</th>
       <th>Telefono</th>
