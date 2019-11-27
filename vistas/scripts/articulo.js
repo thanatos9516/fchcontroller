@@ -21,6 +21,7 @@ function init(){
 function limpiar(){
 	$("#codigo").val("");
 	$("#nombre").val("");
+    $("#precio").val("");
 	$("#descripcion").val("");
 	$("#stock").val("");
 	$("#imagenmuestra").attr("src","");

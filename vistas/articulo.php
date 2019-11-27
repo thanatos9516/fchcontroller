@@ -30,6 +30,7 @@ if ($_SESSION['almacen']==1) {
     <thead>
       <th>Options</th>
       <th>Name</th>
+      <th>Price</th>
       <th>Category</th>
       <th>Code</th>
       <th>Stock</th>
@@ -42,6 +43,7 @@ if ($_SESSION['almacen']==1) {
     <tfoot>
        <th>Options</th>
       <th>Name</th>
+      <th>Price</th>
       <th>Category</th>
       <th>Code</th>
       <th>Stock</th>
@@ -57,6 +59,11 @@ if ($_SESSION['almacen']==1) {
       <label for="">Name(*):</label>
       <input class="form-control" type="hidden" name="idarticulo" id="idarticulo">
       <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Price(*):</label>
+      <input class="form-control" type="hidden" name="idarticulo" id="idarticulo">
+      <input class="form-control" type="text" name="price" id="price" maxlength="100" placeholder="Price" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Category(*):</label>
