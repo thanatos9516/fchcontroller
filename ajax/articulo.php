@@ -10,8 +10,8 @@ $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $stock=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
 $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
-$precio=isset($_POST["precio"])? limpiarCadena($_POST["precio"]):"";
-
+$precio_costo=isset($_POST["precio_costo"])? limpiarCadena($_POST["precio_costo"]):"";
+$precio_venta=isset($_POST["precio_venta"])? limpiarCadena($_POST["precio_venta"]):"";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
@@ -57,13 +57,14 @@ switch ($_GET["op"]) {
 			$data[]=array(
             "0"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-primary btn-xs" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
             "1"=>$reg->nombre,
-            "2"=>$reg->precio,  
-            "3"=>$reg->categoria,
-            "4"=>$reg->codigo,
-            "5"=>$reg->stock,
-            "6"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
-            "7"=>$reg->descripcion,
-            "8"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
+			"2"=>$reg->precio_costo,
+			"3"=>$reg->precio_venta,  
+            "4"=>$reg->categoria,
+            "5"=>$reg->codigo,
+            "6"=>$reg->stock,
+            "7"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
+            "8"=>$reg->descripcion,
+            "9"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
               );
 		}
 		$results=array(

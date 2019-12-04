@@ -30,7 +30,8 @@ if ($_SESSION['almacen']==1) {
     <thead>
       <th>Options</th>
       <th>Name</th>
-      <th>Price</th>
+      <th>Sale Price</th>.
+      <th>Cost Price</th>
       <th>Category</th>
       <th>Code</th>
       <th>Stock</th>
