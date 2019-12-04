@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2019 a las 07:38:56
+-- Tiempo de generación: 27-11-2019 a las 07:40:53
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -419,6 +419,42 @@ INSERT INTO `venta` (`idventa`, `idcliente`, `idusuario`, `tipo_comprobante`, `s
 (24, 12, 5, 'Factura', '1234', '222', '2019-08-03 00:00:00', '13.00', '9000.00', 'Aceptado'),
 (25, 12, 4, 'Factura', '111', '123', '2019-09-20 00:00:00', '13.00', '60.00', 'Aceptado');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `warehouse`
+--
+
+CREATE TABLE `warehouse` (
+  `id_ware` int(11) NOT NULL,
+  `name_warehouse` varchar(200) NOT NULL,
+  `number_shop` int(11) NOT NULL,
+  `city_warehouse` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `warehouse`
+--
+
+INSERT INTO `warehouse` (`id_ware`, `name_warehouse`, `number_shop`, `city_warehouse`) VALUES
+(1, 'Shoppers', 653, 'Sudbury'),
+(2, 'Shoppers', 655, 'Kapuskasing'),
+(3, 'Shoppers', 665, 'north Bay'),
+(4, 'Shoppers', 671, 'Timmins'),
+(5, 'Shoppers', 1247, 'North Bay'),
+(6, 'Shoppers', 1347, 'Timmins'),
+(7, 'No frills', 703, 'north Bay'),
+(8, 'No frills', 704, 'Orillia'),
+(9, 'No frills', 3125, 'Timmins'),
+(10, 'Larabies', 812, 'Kapuskasing'),
+(11, 'Brian\'s', 1793, 'hearst'),
+(12, 'Chartrands', 2611, 'Chelmsford'),
+(13, 'Daileys', 2628, 'Timmins'),
+(14, 'Parker\'s', 2639, 'North Bay'),
+(15, 'Chris', 2671, 'Sudbury'),
+(16, 'Rome\'s', 2683, 'sault Ste Marie'),
+(17, 'freshco', 9762, 'north Bay');
+
 --
 -- Índices para tablas volcadas
 --
@@ -498,6 +534,12 @@ ALTER TABLE `venta`
   ADD KEY `fk_venta_usuario_idx` (`idusuario`);
 
 --
+-- Indices de la tabla `warehouse`
+--
+ALTER TABLE `warehouse`
+  ADD PRIMARY KEY (`id_ware`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -560,6 +602,12 @@ ALTER TABLE `usuario_permiso`
 --
 ALTER TABLE `venta`
   MODIFY `idventa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT de la tabla `warehouse`
+--
+ALTER TABLE `warehouse`
+  MODIFY `id_ware` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
