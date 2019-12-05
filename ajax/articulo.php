@@ -10,6 +10,7 @@ $nombre=isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
 $stock=isset($_POST["stock"])? limpiarCadena($_POST["stock"]):"";
 $descripcion=isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
 $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
+$profit=isset($_POST["profit"])? limpiarCadena($_POST["profit"]):"";
 $precio_costo=isset($_POST["precio_costo"])? limpiarCadena($_POST["precio_costo"]):"";
 $precio_venta=isset($_POST["precio_venta"])? limpiarCadena($_POST["precio_venta"]):"";
 
@@ -26,10 +27,13 @@ switch ($_GET["op"]) {
 		}
 	}
 	if (empty($idarticulo)) {
-		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio);
+		//$precio_venta += ((int)$precio_costo['precio_costo'] * (int)$profit['profit']); $precio_costo * $profit; 
+		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $profit, $precio_costo, $precio_venta);
 		echo $rspta ? "Data registered correctly" : "Could not register data";
 	}else{
-         $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio);
+
+		//$precio_venta += ((int)$precio_costo['precio_costo'] * (int)$profit['profit']); $precio_costo * $profit;
+        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $profit, $precio_costo, $precio_venta);
 		echo $rspta ? "Data updated successfully" : "Could not update data";
 	}
 		break;

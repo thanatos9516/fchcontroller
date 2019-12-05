@@ -63,13 +63,18 @@ if ($_SESSION['almacen']==1) {
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Cost Price(*):</label>
-      <input class="form-control" type="hidden" name="idarticulo" id="idarticulo">
-      <input class="form-control" type="text" name="price" id="price" maxlength="100" placeholder="Cost Price" required>
+      <input class="form-control" type="hidden" name="precio_costo" id="precio_costo">
+      <input class="form-control" type="text" name="precio_costo" id="precio_costo" maxlength="100" placeholder="Cost Price" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Profit(*):</label>
-      <input class="form-control" type="hidden" name="idarticulo" id="idarticulo">
+      <input class="form-control" type="hidden" name="profit" id="profit">
       <input class="form-control" type="text" name="profit" id="profit" maxlength="100" placeholder="Profit" required>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Sale Price(*):</label>
+      <input class="form-control" type="hidden" name="precio_venta" id="precio_venta">
+      <input class="form-control" type="text" name="precio_venta" id="precio_venta" maxlength="100" placeholder="Sale Price" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Category(*):</label>
