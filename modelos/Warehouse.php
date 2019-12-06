@@ -11,13 +11,13 @@ public function __construct(){
 
 //metodo insertar regiustro
 public function insertar($namewarehouse,$numberwarehouse,$citywarehouse){
-	$sql="INSERT INTO categoria (namewarehouse,numberwarehouse,citywarehouse,condicion) VALUES ('$namewarehouse','$numberwarehouse','$citywarehouse','1')";
+	$sql="INSERT INTO warehouse (namewarehouse,numberwarehouse,citywarehouse,condicion) VALUES ('$namewarehouse','$numberwarehouse','$citywarehouse','1')";
 	return ejecutarConsulta($sql);
 }
 
 public function editar($idwarehouse,$namewarehouse,$numberwarehouse,$citywarehouse){
 	$sql="UPDATE warehouse SET namewarehouse='$namewarehouse',numberwarehouse='$numberwarehouse',citywarehouse='$citywarehouse' 
-	WHERE idcategoria='$idwarehouse'";
+	WHERE idwarehouse='$idwarehouse'";
 	return ejecutarConsulta($sql);
 }
 public function desactivar($idwarehouse){
@@ -30,19 +30,19 @@ public function activar($idwarehouse){
 }
 
 //metodo para mostrar registros
-public function mostrar($idcategoria){
-	$sql="SELECT * FROM categoria WHERE idcategoria='$idcategoria'";
+public function mostrar($idwarehouse){
+	$sql="SELECT * FROM warehouse WHERE idwarehouse='$idwarehouse'";
 	return ejecutarConsultaSimpleFila($sql);
 }
 
 //listar registros
 public function listar(){
-	$sql="SELECT * FROM categoria";
+	$sql="SELECT * FROM warehouse";
 	return ejecutarConsulta($sql);
 }
 //listar y mostrar en selct
 public function select(){
-	$sql="SELECT * FROM categoria WHERE condicion=1";
+	$sql="SELECT * FROM warehouse WHERE condicion=1";
 	return ejecutarConsulta($sql);
 }
 }

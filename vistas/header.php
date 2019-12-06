@@ -110,6 +110,7 @@ if ($_SESSION['almacen']==1) {
           <ul class="treeview-menu">
             <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Manufactures</a></li>
             <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Category</a></li>
+            <li><a href="warehouse.php"><i class="fa fa-circle-o"></i> Warehouse</a></li>
           </ul>
         </li>';
 }
