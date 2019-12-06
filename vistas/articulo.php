@@ -30,8 +30,9 @@ if ($_SESSION['almacen']==1) {
     <thead>
       <th>Options</th>
       <th>Name</th>
-      <th>Sale Price</th>.
+      <th>Profit</th>
       <th>Cost Price</th>
+      <th>Sale Price</th>
       <th>Category</th>
       <th>Code</th>
       <th>Stock</th>
@@ -44,7 +45,9 @@ if ($_SESSION['almacen']==1) {
     <tfoot>
        <th>Options</th>
       <th>Name</th>
-      <th>Price</th>
+      <th>Profit</th>
+      <th>Cost Price</th>
+      <th>Sale Price</th>
       <th>Category</th>
       <th>Code</th>
       <th>Stock</th>
@@ -67,15 +70,15 @@ if ($_SESSION['almacen']==1) {
       <input class="form-control" type="text" name="precio_costo" id="precio_costo" maxlength="100" placeholder="Cost Price" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
-      <label for="">Profit(*):</label>
+      <label for="">Profit(*): Example(0.20)</label>
       <input class="form-control" type="hidden" name="profit" id="profit">
       <input class="form-control" type="text" name="profit" id="profit" maxlength="100" placeholder="Profit" required>
     </div>
-    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+    <!-- <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Sale Price(*):</label>
       <input class="form-control" type="hidden" name="precio_venta" id="precio_venta">
       <input class="form-control" type="text" name="precio_venta" id="precio_venta" maxlength="100" placeholder="Sale Price" required>
-    </div>
+    </div> -->
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Category(*):</label>
       <select name="idcategoria" id="idcategoria" class="form-control selectpicker" data-Live-search="true" required></select>

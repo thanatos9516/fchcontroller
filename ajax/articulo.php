@@ -27,13 +27,12 @@ switch ($_GET["op"]) {
 		}
 	}
 	if (empty($idarticulo)) {
-		//$precio_venta += ((int)$precio_costo['precio_costo'] * (int)$profit['profit']); $precio_costo * $profit; 
-		$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $profit, $precio_costo, $precio_venta);
+	$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $precio_costo,$profit, $precio_venta);
 		echo $rspta ? "Data registered correctly" : "Could not register data";
 	}else{
 
 		//$precio_venta += ((int)$precio_costo['precio_costo'] * (int)$profit['profit']); $precio_costo * $profit;
-        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $profit, $precio_costo, $precio_venta);
+        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $profit, $precio_costo /*$precio_venta*/);
 		echo $rspta ? "Data updated successfully" : "Could not update data";
 	}
 		break;
@@ -60,15 +59,16 @@ switch ($_GET["op"]) {
 		while ($reg=$rspta->fetch_object()) {
 			$data[]=array(
             "0"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-primary btn-xs" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
-            "1"=>$reg->nombre,
-			"2"=>$reg->precio_costo,
-			"3"=>$reg->precio_venta,  
-            "4"=>$reg->categoria,
-            "5"=>$reg->codigo,
-            "6"=>$reg->stock,
-            "7"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
-            "8"=>$reg->descripcion,
-            "9"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
+			"1"=>$reg->nombre,
+			"2"=>$reg->profit,
+			"3"=>$reg->precio_costo,
+			"4"=>$reg->precio_venta,  
+            "5"=>$reg->categoria,
+            "6"=>$reg->codigo,
+            "7"=>$reg->stock,
+            "8"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
+            "9"=>$reg->descripcion,
+            "10"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
               );
 		}
 		$results=array(
