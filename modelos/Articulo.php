@@ -42,7 +42,9 @@ public function mostrar($idarticulo){
 
 //listar registros 
 public function listar(){
-	$sql="SELECT a.idarticulo,a.idcategoria,c.nombre as categoria,a.codigo, a.nombre,a.stock,a.descripcion,a.imagen,a.condicion, a.precio_costo, a.profit, a.precio_venta FROM articulo a INNER JOIN categoria c ON a.idcategoria=c.idcategoria";
+	$sql="SELECT a.idarticulo,a.idcategoria, a.idwarehouse, w.namewarehouse as warehouse, c.nombre as categoria,a.codigo, a.nombre,a.stock,a.descripcion,a.imagen,a.condicion, a.precio_costo, a.profit, a.precio_venta FROM articulo a 
+	INNER JOIN categoria c ON a.idcategoria=c.idcategoria 
+	INNER JOIN warehouse w on a.idwarehouse=w.idwarehouse";
 	return ejecutarConsulta($sql);
 }
 

@@ -34,6 +34,7 @@ if ($_SESSION['almacen']==1) {
       <th>Cost Price</th>
       <th>Sale Price</th>
       <th>Category</th>
+      <th>Warehouse</th>
       <th>Code</th>
       <th>Stock</th>
       <th>Image</th>
@@ -49,6 +50,7 @@ if ($_SESSION['almacen']==1) {
       <th>Cost Price</th>
       <th>Sale Price</th>
       <th>Category</th>
+      <th>Warehouse</th>
       <th>Code</th>
       <th>Stock</th>
       <th>Image</th>
@@ -82,6 +84,10 @@ if ($_SESSION['almacen']==1) {
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Category(*):</label>
       <select name="idcategoria" id="idcategoria" class="form-control selectpicker" data-Live-search="true" required></select>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Warehouse(*):</label>
+      <select name="idwarehouse" id="idwarehouse" class="form-control selectpicker" data-Live-search="true" required></select>
     </div>
        <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Stock</label>

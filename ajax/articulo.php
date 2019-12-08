@@ -13,6 +13,7 @@ $imagen=isset($_POST["imagen"])? limpiarCadena($_POST["imagen"]):"";
 $profit=isset($_POST["profit"])? limpiarCadena($_POST["profit"]):"";
 $precio_costo=isset($_POST["precio_costo"])? limpiarCadena($_POST["precio_costo"]):"";
 $precio_venta=isset($_POST["precio_venta"])? limpiarCadena($_POST["precio_venta"]):"";
+$idwarehouse=isset($_POST["idwarehouse"])? limpiarCadena($_POST["idwarehouse"]):"";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
@@ -27,12 +28,12 @@ switch ($_GET["op"]) {
 		}
 	}
 	if (empty($idarticulo)) {
-	$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $precio_costo,$profit, $precio_venta);
+	$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $precio_costo,$profit,$precio_venta,$idwarehouse);
 		echo $rspta ? "Data registered correctly" : "Could not register data";
 	}else{
 
 		//$precio_venta += ((int)$precio_costo['precio_costo'] * (int)$profit['profit']); $precio_costo * $profit;
-        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $profit, $precio_costo /*$precio_venta*/);
+        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$profit,$precio_costo,$precio_venta,$idwarehouse);
 		echo $rspta ? "Data updated successfully" : "Could not update data";
 	}
 		break;
@@ -63,7 +64,8 @@ switch ($_GET["op"]) {
 			"2"=>$reg->profit,
 			"3"=>$reg->precio_costo,
 			"4"=>$reg->precio_venta,  
-            "5"=>$reg->categoria,
+			"5"=>$reg->categoria,
+			"6"=>$reg->warehouse,
             "6"=>$reg->codigo,
             "7"=>$reg->stock,
             "8"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
