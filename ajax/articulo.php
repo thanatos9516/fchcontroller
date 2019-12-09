@@ -66,11 +66,11 @@ switch ($_GET["op"]) {
 			"4"=>$reg->precio_venta,  
 			"5"=>$reg->categoria,
 			"6"=>$reg->warehouse,
-            "6"=>$reg->codigo,
-            "7"=>$reg->stock,
-            "8"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
-            "9"=>$reg->descripcion,
-            "10"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
+            "7"=>$reg->codigo,
+            "8"=>$reg->stock,
+            "9"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
+            "10"=>$reg->descripcion,
+            "11"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
               );
 		}
 		$results=array(
@@ -91,5 +91,16 @@ switch ($_GET["op"]) {
 				echo '<option value=' . $reg->idcategoria.'>'.$reg->nombre.'</option>';
 			}
 			break;
+
+		case 'selectWarehouse':
+				require_once "../modelos/Warehouse.php";
+				$warehouse=new Warehouse();
+	
+				$rspta=$warehouse->select();
+	
+				while ($reg=$rspta->fetch_object()) {
+					echo '<option value=' . $reg->idwarehouse.'>'.$reg->namewarehouse.'</option>';
+				}
+				break;
 }
  ?>

@@ -39,7 +39,7 @@ if ($_SESSION['almacen']==1) {
       <th>Stock</th>
       <th>Image</th>
       <th>Description</th>
-      <th>C ondition</th>
+      <th>Condition</th>
     </thead>
     <tbody>
     </tbody>

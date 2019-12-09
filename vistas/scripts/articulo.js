@@ -9,12 +9,19 @@ function init(){
    	guardaryeditar(e);
    })
 
-   //cargamos los items al celect categoria
+   //cargamos los items al select categoria
    $.post("../ajax/articulo.php?op=selectCategoria", function(r){
    	$("#idcategoria").html(r);
    	$("#idcategoria").selectpicker('refresh');
    });
    $("#imagenmuestra").hide();
+
+   //cargamos los items al select warehouse
+   $.post("../ajax/articulo.php?op=selectWarehouse", function(r){
+	$("#idwarehouse").html(r);
+	$("#idwarehouse").selectpicker('refresh');
+});
+$("#imagenmuestra").hide();
 }
 
 //funcion limpiar
