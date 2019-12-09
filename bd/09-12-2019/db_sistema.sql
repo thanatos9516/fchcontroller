@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-12-2019 a las 16:17:14
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.6
+-- Servidor: localhost
+-- Tiempo de generación: 10-12-2019 a las 00:32:49
+-- Versión del servidor: 10.4.8-MariaDB
+-- Versión de PHP: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,6 +40,7 @@ CREATE TABLE `articulo` (
   `precio_costo` int(11) NOT NULL,
   `precio_venta` int(11) NOT NULL,
   `profit` decimal(5,2) NOT NULL,
+  `others` int(11) NOT NULL,
   `idwarehouse` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -47,87 +48,88 @@ CREATE TABLE `articulo` (
 -- Volcado de datos para la tabla `articulo`
 --
 
-INSERT INTO `articulo` (`idarticulo`, `idcategoria`, `codigo`, `nombre`, `stock`, `descripcion`, `imagen`, `condicion`, `precio_costo`, `precio_venta`, `profit`, `idwarehouse`) VALUES
-(9, 7, '56112004100095', 'Advance SC750', 15, '169.94 hr', '1564119817.jfif', 1, 0, 0, '0.00', 0),
-(10, 12, '100050', 'Esteam airmover', 8, 'Fan tipe Shell black', NULL, 1, 0, 0, '0.00', 0),
-(11, 12, '100044', 'Rabbit swing', 8, '19\" Swing Machine', NULL, 1, 0, 0, '0.00', 0),
-(12, 12, '100021', 'tennant T3', 9, '20\" Sceubber T3 Tennant', NULL, 1, 0, 0, '0.00', 0),
-(13, 12, '100049', 'Power Fist Fan', 10, '32\" Fan', NULL, 1, 0, 0, '0.00', 0),
-(14, 12, '2002412', 'SPE charger', 10, '24V charger', NULL, 1, 0, 0, '0.00', 0),
-(15, 12, '100019', 'Rabbit', 10, '19\" Swing Machine. Rabbit', NULL, 1, 0, 0, '0.00', 0),
-(16, 12, '100018', 'Rabbit 2', 10, 'Swing Machine 19\"', NULL, 1, 0, 0, '0.00', 0),
-(17, 12, '100015', 'Tennant 5680', 10, 'Auto Scrubber Tennant 5680', NULL, 1, 0, 0, '0.00', 0),
-(18, 12, '200064', 'Lester Electrical Charger', 10, '24v Charger Dual', NULL, 1, 0, 0, '0.00', 0),
-(19, 12, '200735', 'Quiq Charger', 10, '36V Charger Md 912-3600 E254286', NULL, 1, 0, 0, '0.00', 0),
-(20, 12, '100039', 'Clarke Betco 27 Buffer', 10, 'Clarke buffer with Betco Engine', NULL, 1, 0, 0, '0.00', 0),
-(21, 12, '10679738002333', 'Chanathon', 10, 'High Solids Finish 2x10L', NULL, 1, 0, 0, '0.00', 0),
-(23, 7, '100063', 'Viper', 10, 'model AS5160-CAN', NULL, 1, 0, 0, '0.00', 0),
-(24, 7, '100028', 'Clark Focus II', 10, 'Scrubber 32\"', NULL, 1, 0, 0, '0.00', 0),
-(25, 7, '100029', 'Tennant 5400', 10, '26\" auto scrubber Tennant 5400 serial 10035393', NULL, 1, 0, 0, '0.00', 0),
-(26, 7, '100027', 'Tennant 5680 27', 10, 'Auto scrubber 32\"  tennant 5680 serial 10571613', NULL, 1, 0, 0, '0.00', 0),
-(27, 7, '100020', 'Tennant 5680 20', 10, '32\" Tennant 5680 floor scrubber. Hrs 3513', NULL, 1, 0, 0, '0.00', 0),
-(28, 7, '100016', 'Advance Converta Max26', 10, NULL, NULL, 1, 0, 0, '0.00', 0),
-(29, 7, '100003', 'Tennant 5280', 10, '20\"  Auto Scrubber', NULL, 1, 0, 0, '0.00', 0),
-(31, 3, '110607021', 'GASKET MUFFLER', 10, 'KAWASAKI GASKET FOR THE MUFFLER AREA', NULL, 1, 0, 0, '0.00', 1),
-(32, 3, '211717034', 'Coil Betco E11439-00', 10, 'Betco Buffer Coil Engen', NULL, 1, 0, 0, '0.00', 1),
-(33, 3, NULL, 'Air Filter', 10, 'Kawasaki Air filter, works in engenes FR651/FR691/FR730 FS481/FS541/FS600 FS651/FS691/FS730', NULL, 1, 0, 0, '0.00', 0),
-(34, 3, NULL, 'Colson Wheel 6x1 1/2', 10, '6\" Colson Wheel for Betco Buffers', NULL, 1, 0, 0, '0.00', 0),
-(35, 3, NULL, 'Bushing', 10, 'Kawasaki engine Busing for Betco 18hp', NULL, 1, 0, 0, '0.00', 0),
-(36, 3, NULL, 'Propane hose', 10, '18\" ( standard ) Propane hose for Kawasaki engens', NULL, 1, 0, 0, '0.00', 0),
-(37, 3, NULL, 'Kawasaki gasket 1', 10, 'Gasket, carburetor to air fuel Hub', NULL, 1, 0, 0, '0.00', 0),
-(38, 3, NULL, 'Regulator T60', 10, 'Propane Regulatore T60 Betco', NULL, 1, 0, 0, '0.00', 0),
-(39, 3, NULL, 'Buffer Solenoid 12v', 10, 'Buffer Solenoid 12v, 3CT', NULL, 1, 0, 0, '0.00', 0),
-(40, 3, NULL, 'Starter 1', 10, 'Starter 12v DC, part # 21163-7031, Kawasaki # 99999-7080', NULL, 1, 0, 0, '0.00', 0),
-(41, 6, '100030', 'Betco 030', 10, '27 Betco buffer  50423X', NULL, 1, 0, 0, '0.00', 0),
-(42, 6, '100013', 'Betco Buffer 27', 10, '27 betco Buffer # 51815x. code FS481V-ES10-M', NULL, 1, 0, 0, '0.00', 0),
-(43, 6, '100042', 'Buffer Pioneer 24\"', 10, '24\" Buffer Pioneer Eclips,  rebild engine, new start, new Bord', NULL, 1, 0, 0, '0.00', 0),
-(44, 6, '100041', 'FCH Betco', 10, 'Buffer 27\" with new engine Betco 18hp, new battery, new regulator. new clutch.  Frame is from Pioneer Eclipse', NULL, 1, 0, 0, '0.00', 0),
-(45, 6, '100036', 'hurricane', 10, '27\" Propane Buffer 17Hp, Md. DBIR2725', NULL, 1, 0, 0, '0.00', 0),
-(46, 6, '100037', 'Speed Start', 10, NULL, NULL, 1, 0, 0, '0.00', 0),
-(47, 6, NULL, 'IPC Eagle', 10, '24\" Buffer Eagle', NULL, 1, 0, 0, '0.00', 0),
-(48, 5, NULL, 'Bissu', 10, 'polvo para cejas', NULL, 1, 0, 0, '0.00', 0),
-(49, 5, '95032386', 'ATTAC', 10, 'Floor Stripper', NULL, 1, 0, 0, '0.00', 0),
-(50, 5, '200075', 'Betco Kling', 10, 'Thickened Acid Toilet and Urinal Cleaner', NULL, 1, 0, 0, '0.00', 0),
-(51, 9, '300002', 'Shop Vac', 10, '1.25\" Dust Brush for Vacuum', NULL, 1, 0, 0, '0.00', 0),
-(53, 9, '100100', 'Scrapper', 10, '5\" red Scrapper', NULL, 1, 0, 0, '0.00', 0),
-(54, 63, '200028', 'Eglagle charger 28', 10, '24V charger Multy ise GL and As', NULL, 1, 0, 0, '0.00', 0),
-(55, 63, '100031', 'Centaur Rabbit', 10, '19\" Swing machine', NULL, 1, 0, 0, '0.00', 0),
-(56, 63, '200430', 'Dual Mode Charger', 10, 'Dual mode charger 24v 12A GL and As', NULL, 1, 0, 0, '0.00', 0),
-(57, 63, '200280', 'Lester Charger A1', 10, '24V charger Multy GL and As', NULL, 1, 0, 0, '0.00', 0),
-(58, 63, '2003625', 'Egle Charger', 10, '36V Smart Charger', NULL, 1, 0, 0, '0.00', 0),
-(59, 63, '2003879', 'Lester Electrical', 10, '24V. 12Am smart  charger', NULL, 1, 0, 0, '0.00', 0),
-(60, 2, NULL, 'Cobra CB Radio', 10, 'CB Radio 40 channels', NULL, 1, 0, 0, '0.00', 1),
-(61, 2, NULL, 'Cobra CB', 10, 'CB 40 Channels Radio', NULL, 1, 0, 0, '0.00', 1),
-(62, 10, NULL, 'Power First Yellow Led', 10, 'Yellow Led 1\"', NULL, 1, 0, 0, '0.00', 0),
-(63, 10, NULL, 'Led R', 10, 'Red Led 1\" 12v', NULL, 1, 0, 0, '0.00', 0),
-(64, 10, NULL, 'BlacksMiti', 10, 'Fog Light With 3\" Square', NULL, 1, 0, 0, '0.00', 0),
-(65, 10, NULL, 'work light led', 10, '4\" led Lights Squer', NULL, 1, 0, 0, '0.00', 0),
-(66, 10, NULL, 'Blacksmiti Fog light', 10, '2 White Fog Led Lights 3\" Square', NULL, 1, 0, 0, '0.00', 0),
-(67, 21, NULL, 'Brother 400', 10, 'Label and bar code printer', NULL, 1, 0, 0, '0.00', 0),
-(68, 25, '800100', 'Washer Lock Nuts', 10, 'Lock Nuts 3/8-16 SS', NULL, 1, 0, 0, '0.00', 0),
-(69, 25, '800103', 'Washer', 10, '3/8 Lock Washer Stainless', NULL, 1, 0, 0, '0.00', 0),
-(70, 25, '800101', 'Stainless Screw', 10, '3/8- 16 x 2\"', NULL, 1, 0, 0, '0.00', 0),
-(71, 25, '800107', 'Stainless Screw 1\"', 10, 'Hex cap Stainles Screw 3/8- 16x 1\"', NULL, 1, 0, 0, '0.00', 0),
-(72, 25, '800104', 'Washer Flat', 10, 'Flat Washer 3/8 Stainless', NULL, 1, 0, 0, '0.00', 0),
-(74, 25, '800105', 'Stainless Screw 1-1/2', 10, 'Hex Cap Screw 3/8- 16. 1-1/2\"  Stainless', NULL, 1, 0, 0, '0.00', 0),
-(75, 25, '800106', 'Stainless Screw 3/4', 10, 'Hex Cap Screw Stainless 3/8-16 x 3/4\"', NULL, 1, 0, 0, '0.00', 0),
-(76, 15, '100025', 'Advance 34RST', 10, 'Automatic Scrubber 34\"', NULL, 1, 0, 0, '0.00', 0),
-(77, 15, '56315115', 'Advance Tires', 10, '9\" tire for Advance 13\"', NULL, 1, 0, 0, '0.00', 0),
-(78, 23, NULL, '14\" Black Pad FCH', 10, '14\" auto scrubber pads for stripping and dip scrub', NULL, 1, 0, 0, '0.00', 0),
-(79, 23, NULL, '14\" Pad Twistef Red', 10, '14\" Red Diamond pads for dip scrubb or concret polish', NULL, 1, 0, 0, '0.00', 0),
-(80, 23, NULL, '13\" Blue Pads 3M', 10, NULL, NULL, 1, 0, 0, '0.00', 0),
-(81, 23, NULL, '13\" Black Pad 3M', 10, '13\" black black stripping pads', NULL, 1, 0, 0, '0.00', 0),
-(82, 23, NULL, '14\" Red Pad', 10, '14\" Red pad for daily clean', NULL, 1, 0, 0, '0.00', 0),
-(84, 23, NULL, '14\" Green Pad FCH', 10, '14\" green scrubbin and dip clean pads', NULL, 1, 0, 0, '0.00', 0),
-(85, 23, NULL, '14\"x28\" Green Pad', 10, 'Square pad 14x28 Scrubbing and dip clean pad', NULL, 1, 0, 0, '0.00', 0),
-(86, 23, NULL, '16\" Black Pad FCH', 10, '16\" Stripping and Scrubbing Pads', NULL, 1, 0, 0, '0.00', 0),
-(87, 23, NULL, '16\" Green pad FCH', 10, '16\" green scrubbing and dip clean pads', NULL, 1, 0, 0, '0.00', 0),
-(88, 23, NULL, '16\" Pad Twister Red', 10, 'Diamond pads for dip Scrubb or concret polish', NULL, 1, 0, 0, '0.00', 0),
-(89, 23, '50048011084065', '13 Blue pad 3M', 10, '13\" pad for scrubbing and dip clean', NULL, 1, 0, 0, '0.00', 1),
-(90, 4, NULL, 'Electric Wire', 10, 'Red Wire 18G 25ft', NULL, 1, 0, 0, '0.00', 0),
-(91, 23, '300016-1', 'Pad 16 red', 50, 'polish pad FCH red', '1565070470.png', 1, 0, 0, '0.00', 0),
-(93, 7, '123456098765432', 'Pad pepe', 10, 'Floor pad for scrubber machine', '1565845601.png', 1, 0, 0, '0.00', 0),
-(120, 2, 'codigo', 'AAAA', 3, 'asd', '', 1, 1000, 1200, '0.13', 1);
+INSERT INTO `articulo` (`idarticulo`, `idcategoria`, `codigo`, `nombre`, `stock`, `descripcion`, `imagen`, `condicion`, `precio_costo`, `precio_venta`, `profit`, `others`, `idwarehouse`) VALUES
+(9, 7, '56112004100095', 'Advance SC750', 15, '169.94 hr', '1564119817.jfif', 1, 0, 0, '0.00', 0, 0),
+(10, 12, '100050', 'Esteam airmover', 8, 'Fan tipe Shell black', NULL, 1, 0, 0, '0.00', 0, 0),
+(11, 12, '100044', 'Rabbit swing', 8, '19\" Swing Machine', NULL, 1, 0, 0, '0.00', 0, 0),
+(12, 12, '100021', 'tennant T3', 9, '20\" Sceubber T3 Tennant', NULL, 1, 0, 0, '0.00', 0, 0),
+(13, 12, '100049', 'Power Fist Fan', 10, '32\" Fan', NULL, 1, 0, 0, '0.00', 0, 0),
+(14, 12, '2002412', 'SPE charger', 10, '24V charger', NULL, 1, 0, 0, '0.00', 0, 0),
+(15, 12, '100019', 'Rabbit', 10, '19\" Swing Machine. Rabbit', NULL, 1, 0, 0, '0.00', 0, 0),
+(16, 12, '100018', 'Rabbit 2', 10, 'Swing Machine 19\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(17, 12, '100015', 'Tennant 5680', 10, 'Auto Scrubber Tennant 5680', NULL, 1, 0, 0, '0.00', 0, 0),
+(18, 12, '200064', 'Lester Electrical Charger', 10, '24v Charger Dual', NULL, 1, 0, 0, '0.00', 0, 0),
+(19, 12, '200735', 'Quiq Charger', 10, '36V Charger Md 912-3600 E254286', NULL, 1, 0, 0, '0.00', 0, 0),
+(20, 12, '100039', 'Clarke Betco 27 Buffer', 10, 'Clarke buffer with Betco Engine', NULL, 1, 0, 0, '0.00', 0, 0),
+(21, 12, '10679738002333', 'Chanathon', 10, 'High Solids Finish 2x10L', NULL, 1, 0, 0, '0.00', 0, 0),
+(23, 7, '100063', 'Viper', 10, 'model AS5160-CAN', NULL, 1, 0, 0, '0.00', 0, 0),
+(24, 7, '100028', 'Clark Focus II', 10, 'Scrubber 32\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(25, 7, '100029', 'Tennant 5400', 10, '26\" auto scrubber Tennant 5400 serial 10035393', NULL, 1, 0, 0, '0.00', 0, 0),
+(26, 7, '100027', 'Tennant 5680 27', 10, 'Auto scrubber 32\"  tennant 5680 serial 10571613', NULL, 1, 0, 0, '0.00', 0, 0),
+(27, 7, '100020', 'Tennant 5680 20', 10, '32\" Tennant 5680 floor scrubber. Hrs 3513', NULL, 1, 0, 0, '0.00', 0, 0),
+(28, 7, '100016', 'Advance Converta Max26', 10, NULL, NULL, 1, 0, 0, '0.00', 0, 0),
+(29, 7, '100003', 'Tennant 5280', 10, '20\"  Auto Scrubber', NULL, 1, 0, 0, '0.00', 0, 0),
+(31, 3, '110607021', 'GASKET MUFFLER', 10, 'KAWASAKI GASKET FOR THE MUFFLER AREA', NULL, 1, 0, 0, '0.00', 0, 1),
+(32, 3, '211717034', 'Coil Betco E11439-00', 10, 'Betco Buffer Coil Engen', NULL, 1, 0, 0, '0.00', 0, 1),
+(33, 3, NULL, 'Air Filter', 10, 'Kawasaki Air filter, works in engenes FR651/FR691/FR730 FS481/FS541/FS600 FS651/FS691/FS730', NULL, 1, 0, 0, '0.00', 0, 0),
+(34, 3, NULL, 'Colson Wheel 6x1 1/2', 10, '6\" Colson Wheel for Betco Buffers', NULL, 1, 0, 0, '0.00', 0, 0),
+(35, 3, NULL, 'Bushing', 10, 'Kawasaki engine Busing for Betco 18hp', NULL, 1, 0, 0, '0.00', 0, 0),
+(36, 3, NULL, 'Propane hose', 10, '18\" ( standard ) Propane hose for Kawasaki engens', NULL, 1, 0, 0, '0.00', 0, 0),
+(37, 3, NULL, 'Kawasaki gasket 1', 10, 'Gasket, carburetor to air fuel Hub', NULL, 1, 0, 0, '0.00', 0, 0),
+(38, 3, NULL, 'Regulator T60', 10, 'Propane Regulatore T60 Betco', NULL, 1, 0, 0, '0.00', 0, 0),
+(39, 3, NULL, 'Buffer Solenoid 12v', 10, 'Buffer Solenoid 12v, 3CT', NULL, 1, 0, 0, '0.00', 0, 0),
+(40, 3, NULL, 'Starter 1', 10, 'Starter 12v DC, part # 21163-7031, Kawasaki # 99999-7080', NULL, 1, 0, 0, '0.00', 0, 0),
+(41, 6, '100030', 'Betco 030', 10, '27 Betco buffer  50423X', NULL, 1, 0, 0, '0.00', 0, 0),
+(42, 6, '100013', 'Betco Buffer 27', 10, '27 betco Buffer # 51815x. code FS481V-ES10-M', NULL, 1, 0, 0, '0.00', 0, 0),
+(43, 6, '100042', 'Buffer Pioneer 24\"', 10, '24\" Buffer Pioneer Eclips,  rebild engine, new start, new Bord', NULL, 1, 0, 0, '0.00', 0, 0),
+(44, 6, '100041', 'FCH Betco', 10, 'Buffer 27\" with new engine Betco 18hp, new battery, new regulator. new clutch.  Frame is from Pioneer Eclipse', NULL, 1, 0, 0, '0.00', 0, 0),
+(45, 6, '100036', 'hurricane', 10, '27\" Propane Buffer 17Hp, Md. DBIR2725', NULL, 1, 0, 0, '0.00', 0, 0),
+(46, 6, '100037', 'Speed Start', 10, NULL, NULL, 1, 0, 0, '0.00', 0, 0),
+(47, 6, NULL, 'IPC Eagle', 10, '24\" Buffer Eagle', NULL, 1, 0, 0, '0.00', 0, 0),
+(48, 5, NULL, 'Bissu', 10, 'polvo para cejas', NULL, 1, 0, 0, '0.00', 0, 0),
+(49, 5, '95032386', 'ATTAC', 10, 'Floor Stripper', NULL, 1, 0, 0, '0.00', 0, 0),
+(50, 5, '200075', 'Betco Kling', 10, 'Thickened Acid Toilet and Urinal Cleaner', NULL, 1, 0, 0, '0.00', 0, 0),
+(51, 9, '300002', 'Shop Vac', 10, '1.25\" Dust Brush for Vacuum', NULL, 1, 0, 0, '0.00', 0, 0),
+(53, 9, '100100', 'Scrapper', 10, '5\" red Scrapper', NULL, 1, 0, 0, '0.00', 0, 0),
+(54, 63, '200028', 'Eglagle charger 28', 10, '24V charger Multy ise GL and As', NULL, 1, 0, 0, '0.00', 0, 0),
+(55, 63, '100031', 'Centaur Rabbit', 10, '19\" Swing machine', NULL, 1, 0, 0, '0.00', 0, 0),
+(56, 63, '200430', 'Dual Mode Charger', 10, 'Dual mode charger 24v 12A GL and As', NULL, 1, 0, 0, '0.00', 0, 0),
+(57, 63, '200280', 'Lester Charger A1', 10, '24V charger Multy GL and As', NULL, 1, 0, 0, '0.00', 0, 0),
+(58, 63, '2003625', 'Egle Charger', 10, '36V Smart Charger', NULL, 1, 0, 0, '0.00', 0, 0),
+(59, 63, '2003879', 'Lester Electrical', 10, '24V. 12Am smart  charger', NULL, 1, 0, 0, '0.00', 0, 0),
+(60, 2, NULL, 'Cobra CB Radio', 10, 'CB Radio 40 channels', NULL, 1, 0, 0, '0.00', 0, 1),
+(61, 2, NULL, 'Cobra CB', 10, 'CB 40 Channels Radio', NULL, 1, 0, 0, '0.00', 0, 1),
+(62, 10, NULL, 'Power First Yellow Led', 10, 'Yellow Led 1\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(63, 10, NULL, 'Led R', 10, 'Red Led 1\" 12v', NULL, 1, 0, 0, '0.00', 0, 0),
+(64, 10, NULL, 'BlacksMiti', 10, 'Fog Light With 3\" Square', NULL, 1, 0, 0, '0.00', 0, 0),
+(65, 10, NULL, 'work light led', 10, '4\" led Lights Squer', NULL, 1, 0, 0, '0.00', 0, 0),
+(66, 10, NULL, 'Blacksmiti Fog light', 10, '2 White Fog Led Lights 3\" Square', NULL, 1, 0, 0, '0.00', 0, 0),
+(67, 21, NULL, 'Brother 400', 10, 'Label and bar code printer', NULL, 1, 0, 0, '0.00', 0, 0),
+(68, 25, '800100', 'Washer Lock Nuts', 10, 'Lock Nuts 3/8-16 SS', NULL, 1, 0, 0, '0.00', 0, 0),
+(69, 25, '800103', 'Washer', 10, '3/8 Lock Washer Stainless', NULL, 1, 0, 0, '0.00', 0, 0),
+(70, 25, '800101', 'Stainless Screw', 10, '3/8- 16 x 2\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(71, 25, '800107', 'Stainless Screw 1\"', 10, 'Hex cap Stainles Screw 3/8- 16x 1\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(72, 25, '800104', 'Washer Flat', 10, 'Flat Washer 3/8 Stainless', NULL, 1, 0, 0, '0.00', 0, 0),
+(74, 25, '800105', 'Stainless Screw 1-1/2', 10, 'Hex Cap Screw 3/8- 16. 1-1/2\"  Stainless', NULL, 1, 0, 0, '0.00', 0, 0),
+(75, 25, '800106', 'Stainless Screw 3/4', 10, 'Hex Cap Screw Stainless 3/8-16 x 3/4\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(76, 15, '100025', 'Advance 34RST', 10, 'Automatic Scrubber 34\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(77, 15, '56315115', 'Advance Tires', 10, '9\" tire for Advance 13\"', NULL, 1, 0, 0, '0.00', 0, 0),
+(78, 23, NULL, '14\" Black Pad FCH', 10, '14\" auto scrubber pads for stripping and dip scrub', NULL, 1, 0, 0, '0.00', 0, 0),
+(79, 23, NULL, '14\" Pad Twistef Red', 10, '14\" Red Diamond pads for dip scrubb or concret polish', NULL, 1, 0, 0, '0.00', 0, 0),
+(80, 23, NULL, '13\" Blue Pads 3M', 10, NULL, NULL, 1, 0, 0, '0.00', 0, 0),
+(81, 23, NULL, '13\" Black Pad 3M', 10, '13\" black black stripping pads', NULL, 1, 0, 0, '0.00', 0, 0),
+(82, 23, NULL, '14\" Red Pad', 10, '14\" Red pad for daily clean', NULL, 1, 0, 0, '0.00', 0, 0),
+(84, 23, NULL, '14\" Green Pad FCH', 10, '14\" green scrubbin and dip clean pads', NULL, 1, 0, 0, '0.00', 0, 0),
+(85, 23, NULL, '14\"x28\" Green Pad', 10, 'Square pad 14x28 Scrubbing and dip clean pad', NULL, 1, 0, 0, '0.00', 0, 0),
+(86, 23, NULL, '16\" Black Pad FCH', 10, '16\" Stripping and Scrubbing Pads', NULL, 1, 0, 0, '0.00', 0, 0),
+(87, 23, NULL, '16\" Green pad FCH', 10, '16\" green scrubbing and dip clean pads', NULL, 1, 0, 0, '0.00', 0, 0),
+(88, 23, NULL, '16\" Pad Twister Red', 10, 'Diamond pads for dip Scrubb or concret polish', NULL, 1, 0, 0, '0.00', 0, 0),
+(89, 23, '50048011084065', '13 Blue pad 3M', 10, '13\" pad for scrubbing and dip clean', NULL, 1, 0, 0, '0.00', 0, 1),
+(90, 4, NULL, 'Electric Wire', 10, 'Red Wire 18G 25ft', NULL, 1, 0, 0, '0.00', 0, 0),
+(91, 23, '300016-1', 'Pad 16 red', 50, 'polish pad FCH red', '1565070470.png', 1, 0, 0, '0.00', 0, 0),
+(93, 7, '123456098765432', 'Pad pepe', 10, 'Floor pad for scrubber machine', '1565845601.png', 1, 0, 0, '0.00', 0, 0),
+(120, 2, 'codigo', 'AAAA', 3, 'asd', '', 1, 1000, 1200, '0.13', 1000, 1),
+(122, 2, '13123123', 'AAAAAAAAAA', 1, 'asdasd', '', 1, 1000, 2300, '0.30', 1000, 1);
 
 -- --------------------------------------------------------
 
@@ -335,6 +337,18 @@ INSERT INTO `persona` (`idpersona`, `tipo_persona`, `nombre`, `tipo_documento`, 
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `photo`
+--
+
+CREATE TABLE `photo` (
+  `idphoto` int(11) NOT NULL,
+  `route` varchar(500) NOT NULL,
+  `idarticulo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -517,6 +531,12 @@ ALTER TABLE `persona`
   ADD PRIMARY KEY (`idpersona`);
 
 --
+-- Indices de la tabla `photo`
+--
+ALTER TABLE `photo`
+  ADD PRIMARY KEY (`idphoto`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -553,7 +573,7 @@ ALTER TABLE `warehouse`
 -- AUTO_INCREMENT de la tabla `articulo`
 --
 ALTER TABLE `articulo`
-  MODIFY `idarticulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `idarticulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
@@ -590,6 +610,12 @@ ALTER TABLE `permiso`
 --
 ALTER TABLE `persona`
   MODIFY `idpersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT de la tabla `photo`
+--
+ALTER TABLE `photo`
+  MODIFY `idphoto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

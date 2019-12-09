@@ -14,6 +14,7 @@ $profit=isset($_POST["profit"])? limpiarCadena($_POST["profit"]):"";
 $precio_costo=isset($_POST["precio_costo"])? limpiarCadena($_POST["precio_costo"]):"";
 $precio_venta=isset($_POST["precio_venta"])? limpiarCadena($_POST["precio_venta"]):"";
 $idwarehouse=isset($_POST["idwarehouse"])? limpiarCadena($_POST["idwarehouse"]):"";
+$others=isset($_POST["others"])? limpiarCadena($_POST["others"]):"";
 
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
@@ -28,12 +29,12 @@ switch ($_GET["op"]) {
 		}
 	}
 	if (empty($idarticulo)) {
-	$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $precio_costo,$profit,$precio_venta,$idwarehouse);
+	$rspta=$articulo->insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen, $precio_costo,$profit,$precio_venta,$idwarehouse,$others);
 		echo $rspta ? "Data registered correctly" : "Could not register data";
 	}else{
 
 		//$precio_venta += ((int)$precio_costo['precio_costo'] * (int)$profit['profit']); $precio_costo * $profit;
-        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$profit,$precio_costo,$precio_venta,$idwarehouse);
+        $rspta=$articulo->editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$profit,$precio_costo,$precio_venta,$idwarehouse,$others);
 		echo $rspta ? "Data updated successfully" : "Could not update data";
 	}
 		break;
@@ -63,14 +64,15 @@ switch ($_GET["op"]) {
 			"1"=>$reg->nombre,
 			"2"=>$reg->profit,
 			"3"=>$reg->precio_costo,
-			"4"=>$reg->precio_venta,  
-			"5"=>$reg->categoria,
-			"6"=>$reg->warehouse,
-            "7"=>$reg->codigo,
-            "8"=>$reg->stock,
-            "9"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
-            "10"=>$reg->descripcion,
-            "11"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
+			"4"=>$reg->others,
+			"5"=>$reg->precio_venta,  
+			"6"=>$reg->categoria,
+			"7"=>$reg->warehouse,
+            "8"=>$reg->codigo,
+            "9"=>$reg->stock,
+            "10"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
+            "11"=>$reg->descripcion,
+            "12"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">isabled</span>'
               );
 		}
 		$results=array(

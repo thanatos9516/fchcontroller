@@ -32,6 +32,7 @@ if ($_SESSION['almacen']==1) {
       <th>Name</th>
       <th>Profit</th>
       <th>Cost Price</th>
+      <th>Others</th>
       <th>Sale Price</th>
       <th>Category</th>
       <th>Warehouse</th>
@@ -48,6 +49,7 @@ if ($_SESSION['almacen']==1) {
       <th>Name</th>
       <th>Profit</th>
       <th>Cost Price</th>
+      <th>Others</th>
       <th>Sale Price</th>
       <th>Category</th>
       <th>Warehouse</th>
@@ -75,6 +77,11 @@ if ($_SESSION['almacen']==1) {
       <label for="">Profit(*): Example(0.20)</label>
       <input class="form-control" type="hidden" name="profit" id="profit">
       <input class="form-control" type="text" name="profit" id="profit" maxlength="100" placeholder="Profit" required>
+    </div>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Others(*): </label>
+      <input class="form-control" type="hidden" name="others" id="others">
+      <input class="form-control" type="text" name="others" id="others" maxlength="100" placeholder="Others" required>
     </div>
     <!-- <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Sale Price(*):</label>

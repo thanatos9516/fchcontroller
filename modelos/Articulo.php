@@ -10,18 +10,19 @@ public function __construct(){
 }
 
 //metodo insertar regiustro
-public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_costo,$profit, $precio_venta){
+public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_costo,$profit,$precio_venta,$idwarehouse,$others){
 	$porcentaje = ($precio_costo * $profit);
-	$precio_venta = $precio_costo + $porcentaje;
-	$sql="INSERT INTO articulo (idcategoria,codigo,nombre,stock,descripcion,imagen,condicion,precio_costo,profit,precio_venta)
-	 VALUES ('$idcategoria','$codigo','$nombre','$stock','$descripcion','$imagen','1','$precio_costo','$profit','$precio_venta')";
+	$precio2 = $precio_costo+$others;
+	$precio_venta = $precio2 + $porcentaje;
+	$sql="INSERT INTO articulo (idcategoria,codigo,nombre,stock,descripcion,imagen,condicion,precio_costo,profit,precio_venta,idwarehouse,others)
+	 VALUES ('$idcategoria','$codigo','$nombre','$stock','$descripcion','$imagen','1','$precio_costo','$profit','$precio_venta','$idwarehouse','$others')";
 	return ejecutarConsulta($sql);
 }
 
-public function editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio){
-		$porcentaje = ($precio_costo * $profit);
+public function editar($idarticulo,$idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_costo,$profit,$precio_venta,$idwarehouse,$others){
+	$porcentaje = ($precio_costo * $profit);
 	$precio_venta = $precio_costo + $porcentaje;
-	$sql="UPDATE articulo SET idcategoria='$idcategoria',codigo='$codigo', nombre='$nombre',stock='$stock',descripcion='$descripcion',imagen='$imagen', precio_costo='$precio_costo', profit='$profit', precio_venta='$precio_venta' 
+	$sql="UPDATE articulo SET idcategoria='$idcategoria',codigo='$codigo', nombre='$nombre',stock='$stock',descripcion='$descripcion',imagen='$imagen', precio_costo='$precio_costo', profit='$profit', precio_venta='$precio_venta', other='$others' 
 	WHERE idarticulo='$idarticulo'";
 	return ejecutarConsulta($sql);
 }
@@ -42,7 +43,7 @@ public function mostrar($idarticulo){
 
 //listar registros 
 public function listar(){
-	$sql="SELECT a.idarticulo,a.idcategoria, a.idwarehouse, w.namewarehouse as warehouse, c.nombre as categoria,a.codigo, a.nombre,a.stock,a.descripcion,a.imagen,a.condicion, a.precio_costo, a.profit, a.precio_venta FROM articulo a 
+	$sql="SELECT a.idarticulo,a.idcategoria, a.idwarehouse, w.namewarehouse as warehouse, c.nombre as categoria,a.codigo, a.nombre,a.stock,a.descripcion,a.imagen,a.condicion, a.precio_costo, a.profit, a.precio_venta, a.others FROM articulo a 
 	INNER JOIN categoria c ON a.idcategoria=c.idcategoria 
 	INNER JOIN warehouse w on a.idwarehouse=w.idwarehouse";
 	return ejecutarConsulta($sql);
