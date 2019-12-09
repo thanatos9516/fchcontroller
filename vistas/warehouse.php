@@ -52,8 +52,8 @@ if ($_SESSION['almacen']==1) {
   <form action="" name="formulario" id="formulario" method="POST">
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Name</label>
-      <input class="form-control" type="hidden" name="idcategoria" id="idcategoria">
-      <input class="form-control" type="text" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required>
+      <input class="form-control" type="hidden" name="idwarehouse" id="idwarehouse">
+      <input class="form-control" type="text" name="namewarehouse" id="namewarehouse" maxlength="50" placeholder="Nombre" required>
     </div>
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
       <label for="">Number Warehouse</label>
