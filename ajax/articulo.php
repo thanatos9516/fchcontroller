@@ -42,7 +42,7 @@ switch ($_GET["op"]) {
 
 	case 'desactivar':
 		$rspta=$articulo->desactivar($idarticulo);
-		echo $rspta ? "Data deactivated correctly" : "Could not activate data";
+		echo $rspta ? "Data desactivated correctly" : "Could not activate data";
 		break;
 	case 'activar':
 		$rspta=$articulo->activar($idarticulo);
@@ -54,13 +54,22 @@ switch ($_GET["op"]) {
 		echo json_encode($rspta);
 		break;
 
+	case 'show_photo':
+		$rspta=$articulo->mostrar($idarticulo);
+		echo json_encode($rspta);
+		break;
+
     case 'listar':
 		$rspta=$articulo->listar();
 		$data=Array();
 
 		while ($reg=$rspta->fetch_object()) {
 			$data[]=array(
-            "0"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-primary btn-xs" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
+			"0"=>($reg->condicion)?
+			'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'
+			
+			<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'
+			<button class="btn btn-primary btn-xs" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
 			"1"=>$reg->nombre,
 			"2"=>$reg->profit,
 			"3"=>$reg->precio_costo,

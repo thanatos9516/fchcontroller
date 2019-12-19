@@ -41,6 +41,12 @@ public function mostrar($idarticulo){
 	return ejecutarConsultaSimpleFila($sql);
 }
 
+//List all photos
+public function show_photo($idarticulo){
+	$sql="select a.nombre,a.idarticulo,p.idphoto, p.route from articulo a, photo p where p.idarticulo='$idarticulo'";
+	return ejecutarConsultaSimpleFila($sql);
+}
+
 //listar registros 
 public function listar(){
 	$sql="SELECT a.idarticulo,a.idcategoria, a.idwarehouse, w.namewarehouse as warehouse, c.nombre as categoria,a.codigo, a.nombre,a.stock,a.descripcion,a.imagen,a.condicion, a.precio_costo, a.profit, a.precio_venta, a.others FROM articulo a 
