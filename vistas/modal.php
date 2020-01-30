@@ -13,13 +13,13 @@
                 <div class="modal-body">
 				<div class="container-fluid">
 					<?php
-						$a=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid where productid='$pid'");
-						$b=mysqli_fetch_array($a);
+					//	$a=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid where productid='$pid'");
+					//	$b=mysqli_fetch_array($a);
 					?>
 				
                    
                             
-                            <form onsubmit="return false" class="oculto" method="post" enctype="multipart/form-data" id="formUpload">
+                        <!--     <form onsubmit="return false" class="oculto" method="post" enctype="multipart/form-data" id="formUpload">
 	                        <input type="file" name="image" onchange="upload_img();">
                             <input type="submit" value="Upload" class="submit" />
 
@@ -29,7 +29,7 @@
                                 <span class="input-group-addon" style="width:120px;">Photo:</span> 
                                 <input type="file" style="width:400px;" class="form-control" name="file" id="file" multiple="" accept="image/*" />
                                 <input type="submit" value="Upload" class="submit" />
-                                </div>
+                                </div> -->
                              
                                
                          <div class="col-sm-10">
@@ -39,12 +39,12 @@
                                    
 						<?php 
                                       
-                                   $sql = "select * from carousel as c where c.productid = '$pid'"; 
-                                    $result = mysqli_query($conn, $sql);
+                                  // $sql = "select * from carousel as c where c.productid = '$pid'"; 
+                                  //  $result = mysqli_query($conn, $sql);
                                 
                                                                
 
-                                        if(mysqli_num_rows($result) > 0){
+       /*                                  if(mysqli_num_rows($result) > 0){
                                         while($row = mysqli_fetch_array($result)){
                                         $id = $row['idphoto'];
                                         $photo = $row['photo'];
@@ -64,7 +64,7 @@
 
                                     }
                                      
-                                    }
+                                    } */
                                    
                                     
                                         

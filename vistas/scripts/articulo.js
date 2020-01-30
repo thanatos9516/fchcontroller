@@ -118,8 +118,11 @@ function mostrar(idarticulo){
 			$("#idcategoria").selectpicker('refresh');
 			$("#codigo").val(data.codigo);
 			$("#nombre").val(data.nombre);
+			$("#precio_costo").val(data.precio_costo);
 			$("#stock").val(data.stock);
 			$("#descripcion").val(data.descripcion);
+			$("#others").val(data.others);
+			$("#profit").val(data.profit);
 			$("#imagenmuestra").show();
 			$("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
 			$("#imagenactual").val(data.imagen);

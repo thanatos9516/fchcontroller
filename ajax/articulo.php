@@ -1,5 +1,6 @@
 <?php 
 require_once "../modelos/Articulo.php";
+//include '../vistas/modal.php';
 
 $articulo=new Articulo();
 
@@ -67,8 +68,7 @@ switch ($_GET["op"]) {
 			$data[]=array(
 			"0"=>($reg->condicion)?
 			'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'
-			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Add Photo</button>
-			<button class="btn btn-info btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-photo"></i></button>'.' '.'
+			<button class="btn btn-info btn-xs" onclick="show_photo('.$reg->idarticulo.')"><i class="fa fa-photo"></i></button>'.' '.'
 			<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'
 			<button class="btn btn-primary btn-xs" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
 			"1"=>$reg->nombre,
