@@ -9,7 +9,7 @@ public function __construct(){
 
 }
 
-//metodo insertar regiustro
+//metodo insertar registro
 public function insertar($idcategoria,$codigo,$nombre,$stock,$descripcion,$imagen,$precio_costo,$profit,$precio_venta,$idwarehouse,$others){
 	$porcentaje = ($precio_costo * $profit);
 	$precio2 = $precio_costo+$others;
@@ -42,8 +42,13 @@ public function mostrar($idarticulo){
 }
 
 //List all photos
+/* public function show_photo($idarticulo){
+	$sql="select a.nombre,a.idarticulo,p.idphoto, p.route, p.idarticulo from articulo a, photo p where p.idarticulo = a.idarticulo and a.idarticulo ='$idarticulo'";
+	return ejecutarConsultaSimpleFila($sql);
+} */
+
 public function show_photo($idarticulo){
-	$sql="select a.nombre,a.idarticulo,p.idphoto, p.route from articulo a, photo p where p.idarticulo='$idarticulo'";
+	$sql="select p.idarticulo, p.idphoto, p.imagen, a.idarticulo, a.nombre from photo as p, articulo as a where p.idarticulo = '$idarticulo' and a.idarticulo ='$idarticulo'";
 	return ejecutarConsultaSimpleFila($sql);
 }
 

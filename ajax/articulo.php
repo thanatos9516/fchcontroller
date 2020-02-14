@@ -56,7 +56,7 @@ switch ($_GET["op"]) {
 		break;
 
 	case 'show_photo':
-		$rspta=$articulo->mostrar($idarticulo);
+		$rspta=$articulo->show_photo($idarticulo);
 		echo json_encode($rspta);
 		break;
 

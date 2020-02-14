@@ -126,6 +126,29 @@ if ($_SESSION['almacen']==1) {
     </div>
   </form>
 </div>
+
+<div class="panel-body" id="formulariofoto">
+  <form action="" name="formulario" id="formulario" method="POST">
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Name(*):</label>
+      <input class="form-control" type="hidden" name="idarticulo" id="idarticulo">
+      <input class="form-control" type="text" name="nombre" id="nombre" maxlength="100" placeholder="Nombre" required>
+    </div>
+    <hr>
+    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+      <label for="">Image:</label>
+      <input class="form-control" type="file" name="imagen" id="imagen">
+      <input type="hidden" name="imagenactual" id="imagenactual">
+      <img src="" alt="" width="150px" height="120" id="imagenmuestra">
+      <img src="" alt="" width="150px" height="120" id="imagenactual">
+    </div>
+    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Save</button>
+
+      <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancel</button>
+    </div>
+  </form>
+</div>
 <!--fin centro-->
       </div>
       </div>

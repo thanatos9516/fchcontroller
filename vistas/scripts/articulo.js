@@ -42,6 +42,7 @@ function mostrarform(flag){
 	limpiar();
 	if(flag){
 		$("#listadoregistros").hide();
+		$("#formulariofoto").hide();	
 		$("#formularioregistros").show();
 		$("#btnGuardar").prop("disabled",false);
 		$("#btnagregar").hide();
@@ -60,6 +61,7 @@ function cancelarform(){
 
 //funcion listar
 function listar(){
+	$("#formulariofoto").hide();	
 	tabla=$('#tbllistado').dataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
@@ -129,6 +131,37 @@ function mostrar(idarticulo){
 			$("#idarticulo").val(data.idarticulo);
 			generarbarcode();
 		})
+}
+
+function show_photo(idarticulo){
+	$.post("../ajax/articulo.php?op=show_photo",{idarticulo : idarticulo},
+		function(data,status)
+		{
+			data=JSON.parse(data);
+			mostrarfoto(true);
+			$("#nombre").val(data.nombre);
+			$("#imagenmuestra").show();
+			$("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
+			$("#imagenactual").val(data.imagen);
+			$("#idarticulo").val(data.idarticulo);
+			generarbarcode();
+		})
+}
+
+//funcion mostrar formulario foto
+function mostrarfoto(flag){
+	limpiar();
+	if(flag){
+		$("#listadoregistros").hide();
+		//$("#formularioregistros").hide();
+		$("#formulariofoto").show();
+		$("#btnGuardar").prop("disabled",false);
+		$("#btnagregar").hide();
+	}else{
+		$("#listadoregistros").show();
+		$("#formularioregistros").hide();
+		$("#btnagregar").show();
+	}
 }
 
 
