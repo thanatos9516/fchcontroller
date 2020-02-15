@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['nombre'])) {
   header("Location: login.html");
 }else{
-
+require '../config/Conexion.php';
 require 'header.php';
 if ($_SESSION['almacen']==1) {
  ?>
