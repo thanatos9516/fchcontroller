@@ -133,21 +133,6 @@ function mostrar(idarticulo){
 		})
 }
 
-function show_photo(idarticulo){
-	$.post("../ajax/articulo.php?op=show_photo",{idarticulo : idarticulo},
-		function(data,status)
-		{
-			data=JSON.parse(data);
-			mostrarfoto(true);
-			$("#nombre").val(data.nombre);
-			$("#imagenmuestra").show();
-			$("#imagenmuestra").attr("src","../files/articulos/"+data.imagen);
-			$("#imagenactual").val(data.imagen);
-			$("#idarticulo").val(data.idarticulo);
-			generarbarcode();
-		})
-}
-
 //funcion mostrar formulario foto
 function mostrarfoto(flag){
 	limpiar();
@@ -163,6 +148,23 @@ function mostrarfoto(flag){
 		$("#btnagregar").show();
 	}
 }
+
+function show_photo(idarticulo){
+	$.post("../ajax/articulo.php?op=show_photo",{idarticulo : idarticulo},
+		function(data,status)
+		{
+			data=JSON.parse(data);
+			mostrarfoto(true);
+			$("#nombre").val(data.nombre);
+			//$("#imagenmuestra").show();
+			$("#imagenmuestra2").attr("src","../files/articulos/"+data.imagen);
+			//$("#imagenactual").val(data.imagen);
+			$("#idarticulo").val(data.idarticulo);
+			
+		})
+}
+
+
 
 
 //funcion para desactivar

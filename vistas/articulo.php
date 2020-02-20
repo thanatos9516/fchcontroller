@@ -126,7 +126,7 @@ if ($_SESSION['almacen']==1) {
     </div>
   </form>
 </div>
-
+<!-- Mostrar foto form -->
 <div class="panel-body" id="formulariofoto">
   <form action="" name="formulario" id="formulario" method="POST">
     <div class="form-group col-lg-6 col-md-6 col-xs-12">
@@ -139,8 +139,9 @@ if ($_SESSION['almacen']==1) {
       <label for="">Image:</label>
       <input class="form-control" type="file" name="imagen" id="imagen">
       <input type="hidden" name="imagenactual" id="imagenactual">
-      <img src="" alt="" width="150px" height="120" id="imagenmuestra">
-      <img src="" alt="" width="150px" height="120" id="imagenactual">
+      <img src="" alt="" width="150px" height="120" id="imagenmuestra2">
+      <img src="" alt="" width="150px" height="120" id="imagenmuestra2">
+      <!-- <img src="" alt="" width="150px" height="120" id="imagenactual"> -->
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Save</button>

@@ -3,6 +3,8 @@ if (strlen(session_id())<1)
   session_start();
 
   ?>
+
+<?php include('conn.php'); ?>
  <!DOCTYPE html>
 <html>
 <head>
@@ -92,12 +94,17 @@ if (strlen(session_id())<1)
       <ul class="sidebar-menu" data-widget="tree">
 
 <br>
+
+
        <?php 
 if ($_SESSION['escritorio']==1) {
   echo ' <li><a href="escritorio.php"><i class="fa  fa-dashboard (alias)"></i> <span>Home</span></a>
         </li>';
 }
         ?>
+
+    
+
                <?php 
 if ($_SESSION['almacen']==1) {
   echo ' <li class="treeview">
@@ -108,7 +115,7 @@ if ($_SESSION['almacen']==1) {
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Manufactures</a></li>
+            <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Products</a></li>
             <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Category</a></li>
             <li><a href="warehouse.php"><i class="fa fa-circle-o"></i> Warehouse</a></li>
           </ul>
@@ -196,8 +203,33 @@ if ($_SESSION['consultav']==1) {
           </ul>
         </li>';
 }
-        ?>     
-            
+        ?>       
+
+
+        <li>
+                            <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Products<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                	<?php
+							$caq=mysqli_query($conn,"select * from categoria order by nombre asc");
+							while($catrow=mysqli_fetch_array($caq)){
+								?>
+								 <div class="dropdown-divider"></div>
+								<li><form action="products2.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $catrow['idcategoria']; ?>" />
+                <input name="Detalles" type="submit" value="<?php echo $catrow['nombre']; ?>" class="btn btn-success btn-sm" style=" display: inline-block;
+     width: 70%;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     margin-left: 3px;
+     margin-right: 3px;
+     border-radius: 5px;  " /></form></li>
+								<?php
+							}
+						
+						?>
+                                
+                                
+                            </ul>
+                        </li>  
         
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help</span><small class="label pull-right bg-yellow">PDF</small></a></li>
         <li><a href="#"><i class="fa  fa-exclamation-circle"></i> <span>Help</span><small class="label pull-right bg-yellow">IT</small></a></li>
