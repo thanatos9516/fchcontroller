@@ -206,8 +206,12 @@ if ($_SESSION['consultav']==1) {
         ?>       
 
 
-        <li>
-                            <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Products<span class="fa arrow"></span></a>
+        <li class="treeview">
+        <a href="#">
+        <i class="fa fa-product-hunt fa-fw"></i> Products<span class="fa arrow"></span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
                             <ul class="nav nav-second-level">
                                 	<?php
 							$caq=mysqli_query($conn,"select * from categoria order by nombre asc");
@@ -229,6 +233,8 @@ if ($_SESSION['consultav']==1) {
                                 
                                 
                             </ul>
+        </a>
+        
                         </li>  
         
         <li><a href="#"><i class="fa fa-question-circle"></i> <span>Help</span><small class="label pull-right bg-yellow">PDF</small></a></li>

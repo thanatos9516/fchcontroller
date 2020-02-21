@@ -17,7 +17,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <table width="100%" class="table table-striped table-bordered table-hover" id="prodTable">
+            <table  class="table table-striped table-bordered table-hover table-condensed" id="prodTable">
                 <thead>
                     <tr>
                         <th>Product Name</th>
@@ -25,7 +25,7 @@
                         <th>Quantity</th>
 <!--                        <th>Description</th>-->
 <!--                        <th>Tech</th>-->
-                        <th>Video</th>
+                       <!--  <th>Video</th> -->
                         <th>Photo</th>
                         <th>Action</th>
                     </tr>

@@ -140,7 +140,6 @@ if ($_SESSION['almacen']==1) {
       <input class="form-control" type="file" name="imagen" id="imagen">
       <input type="hidden" name="imagenactual" id="imagenactual">
       <img src="" alt="" width="150px" height="120" id="imagenmuestra2">
-      <img src="" alt="" width="150px" height="120" id="imagenmuestra2">
       <!-- <img src="" alt="" width="150px" height="120" id="imagenactual"> -->
     </div>
     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
