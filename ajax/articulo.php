@@ -93,6 +93,39 @@ switch ($_GET["op"]) {
 		echo json_encode($results);
 		break;
 
+		case 'listarxCategoria':
+			$rspta=$articulo->listarxCategoria($idcategoria);
+			$data=Array();
+	
+			while ($reg=$rspta->fetch_object()) {
+				$data[]=array(
+				"0"=>($reg->condicion)?
+				'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'
+				<button class="btn btn-info btn-xs" onclick="show_photo('.$reg->idarticulo.')"><i class="fa fa-photo"></i></button>'.' '.'
+				<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->idarticulo.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->idarticulo.')"><i class="fa fa-pencil"></i></button>'.' '.'
+				<button class="btn btn-primary btn-xs" onclick="activar('.$reg->idarticulo.')"><i class="fa fa-check"></i></button>',
+				"1"=>$reg->nombre,
+				"2"=>$reg->profit,
+				"3"=>$reg->precio_costo,
+				"4"=>$reg->others,
+				"5"=>$reg->precio_venta,  
+				"6"=>$reg->categoria,
+				"7"=>$reg->warehouse,
+				"8"=>$reg->codigo,
+				"9"=>$reg->stock,
+				"10"=>"<img src='../files/articulos/".$reg->imagen."' height='50px' width='50px'>",
+				"11"=>$reg->descripcion,
+				"12"=>($reg->condicion)?' <span class="label bg-green">Activated</span>':'<span class="label bg-red">Disabled</span>'
+				  );
+			}
+			$results=array(
+				 "sEcho"=>1,//info para datatables
+				 "iTotalRecords"=>count($data),//enviamos el total de registros al datatable
+				 "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
+				 "aaData"=>$data); 
+			echo json_encode($results);
+			break;
+
 		case 'selectCategoria':
 			require_once "../modelos/Categoria.php";
 			$categoria=new Categoria();
