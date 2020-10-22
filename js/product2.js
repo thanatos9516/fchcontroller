@@ -90,12 +90,14 @@ function getProductEdit(idProd){
             $("#edit_id").val(idProd);
             $("#edit_name").val(resp.edit_name);
             $("#edit_category").html(resp.category);
-            $("#edit_supplier").html(resp.supplier);
-            $("#edit_price").val(resp.edit_price);
+            $("#edit_warehouse").html(resp.warehouse);
+            $("#edit_code").html(resp.edit_code);
+            $("#edit_profit").html(resp.edit_profit);
+            $("#edit_cost_price").val(resp.edit_cost_price);
+            $("#edit_others").val(resp.edit_others);
+            $("#edit_sale_price").val(resp.edit_sale_price);
             $("#edit_stock").val(resp.edit_stock);
             $("#edit_description").val(resp.edit_description);
-            $("#edit_tech").val(resp.edit_tech);
-            $("#edit_video").val(resp.edit_video);
             
         }
         else

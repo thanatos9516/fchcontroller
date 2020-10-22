@@ -17,7 +17,7 @@
                   <input type="hidden" name="idProdDelete" id="idProdDelete">
                   <input type="hidden" name="nameProd" id="nameProd">
                   <div class="modal-body">
-                      <div class="container-fluid data"> <!-- Pintaremos el ombre y una foto -->
+                      <div class="container-fluid data"> <!-- Pintaremos el nombre y una foto -->
                                      
                       </div>
                   </div>
@@ -32,7 +32,109 @@
 <!-- /.modal -->
 
 <!-- Edit Product -->
-  <div class="modal fade" id="editprod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+   <div class="modal fade" id="editprod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+                </div>
+                <div class="modal-body">
+				<div class="container-fluid">
+                    <form method="" id="addProductForm" data-locked="" enctype="multipart/form-data">
+                      <input type="hidden" id="id" name="id" >
+						<div class="container-fluid">
+                        <div style="height:15px;"></div>
+                        <input type="hidden" name="query" value="0">
+                          <input type="hidden" name="edit_id" id="edit_id">
+						<div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Name:</span>
+                            <input type="text" style="width:400px; text-transform:capitalize;" value="" class="form-control" name="edit_name" id="edit_name" required>
+                        </div>
+						<div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Category:</span>
+                            <select style="width:400px;" id="edit_category" class="form-control" name="edit_category" required>
+								<?php
+									$cat=mysqli_query($conn,"select * from categoria order by nombre asc");
+									while($catrow=mysqli_fetch_array($cat)){
+										?>
+											<option value="<?php echo $catrow['idcategoria']; ?>"><?php echo $catrow['nombre']; ?></option>
+										<?php
+									}
+								?>
+							</select>
+                        </div>
+						<div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Warehouse:</span>
+                            <select style="width:400px;" class="form-control" id="edit_warehouse" name="edit_warehouse" required>
+								<?php
+									$sup=mysqli_query($conn,"select * from warehouse");
+									while($suprow=mysqli_fetch_array($sup)){
+										?>
+											<option value="<?php echo $suprow['idwarehouse']; ?>"><?php echo $suprow['namewarehouse']; ?></option>
+										<?php
+									}
+								?>
+							</select>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                            <label for="">Code:</label>
+                            <input class="form-control" type="text" name="edit_code" id="edit_code" placeholder="codigo del producto" required>
+                            <button class="btn btn-success" type="button" onclick="generarbarcode()">Generate</button>
+                            <button class="btn btn-info" type="button" onclick="imprimir()">Print</button>
+                            <div id="print">
+                                <svg id="barcode"></svg>
+                            </div>
+                        </div>
+                        <div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Profit:</span>
+                            <input type="text" style="width:400px;" class="form-control" name="edit_profit" id="edit_profit" required>
+                        </div>
+                        <div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Cost Price:</span>
+                            <input type="text" style="width:400px;" class="form-control" name="edit_cost_price" id="edit_cost_price" required>
+                        </div>
+                        <div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Others:</span>
+                            <input type="text" style="width:400px;" value="" class="form-control" id="edit_others" name="edit_others" required>
+                        </div>
+                        <div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Sale Price:</span>
+                            <input type="text" style="width:400px;" class="form-control" id="edit_sale_price" name="edit_sale_price" required>
+                        </div>
+						<div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Quantity:</span>
+                            <input type="number" style="width:400px;" class="form-control" id="edit_stock" name="edit_stock">
+                        </div>
+						<div class="form-group input-group">
+                            <span style="width:120px;" class="input-group-addon">Main Photo:</span>
+                            <input type="file" style="width:400px;" accept="*/*" class="form-control" id="image_p" name="image">
+                        </div>
+                  <!--       <div class="form-group input-group">
+							<span style="width:120px;" class="input-group-addon"><b>PDF:</b></span>							
+							<input style="height:45px;" class="form-control" accept="*/*" type="file" name="pdf" id="pdf">
+						</div> -->
+
+                        <div class="form-group">
+                        <label for="exampleTextarea">Description</label>
+                        <textarea class="form-control" name="edit_description" id="edit_description" rows="3"></textarea>
+                        </div>
+						</div>
+				</div>
+				</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                    <button onclick="updateProduct()" type="submit" class="btn btn-info"><i class="fa fa-check-square-o"></i> Update</button>
+                   <!--  <button onclick="addProduct()" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button> -->
+					</form>
+                </div>
+			</div>
+		</div>
+</div>
+
+
+  <!-- <div class="modal fade" id="editprod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
           <div class="modal-content">
               <div class="modal-header">
@@ -107,7 +209,7 @@
 
       </div>
 </div>
-</div>
+</div> -->
 
 <div class="modal fade" id="addphoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl">

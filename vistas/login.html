@@ -16,18 +16,19 @@
   <link rel="stylesheet" href="../public/css/_all-skins.min.css">
   <!-- Morris chart --><!-- Daterange picker -->
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="  background-image: url('../img/hero-bg.jpg')">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>FCH</b>CONTROLLER</a>
+    <img src="../img/fcj_controller/fch_controller-01.png" style="width: 100%;">
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
+  <div class="login-box-body" style="border-radius: 5px;">
+    <h1 style="text-align: center;">Welcome</h1>
     <p class="login-box-msg">Enter your access data</p>
-
+    
     <form  method="post" id="frmAcceso">
       <div class="form-group has-feedback">
-        <input type="text" id="logina" name="logina" class="form-control" placeholder="Usuario">
+        <input type="text" id="logina" name="logina" class="form-control" placeholder="User">
         <span class="fa fa-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -39,8 +40,19 @@
         
         </div>
         <!-- /.col -->
-        <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+        <div class="col-xs-12">
+          <button 
+          style="background:linear-gradient(30deg, rgb(20, 220, 137),rgb(45, 160, 89), rgb(48, 180, 36), rgb(70, 201, 201), rgb(12, 206, 255));
+          border-radius: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 20px;
+          width: 100%;
+          height: 50px;
+          letter-spacing: 1px;
+          "
+          type="submit" class="btn btn-primary btn-block ">Login</button>
         </div>
         <!-- /.col -->
       </div>

@@ -41,9 +41,14 @@
        <!-- Logo -->
        <a href="escritorio.php" class="logo">
          <!-- mini logo for sidebar mini 50x50 pixels -->
-         <span class="logo-mini"><b>FCH</b> Controller</span>
+         <img src="../img/fcj_controller/fch_controller-01.png" style="width: 100%;">
+
+         <span class="logo-mini"><img src="../img/fcj_controller/hoja-01.png" style="width: 100%;">
+</span>
          <!-- logo for regular state and mobile devices -->
-         <span class="logo-lg"><b>FCH</b> CONTROLLER</span>
+         <span class="logo-lg"><img src="../img/fcj_controller/hoja-01.png" style="width: 100%;">
+</span>
+       
        </a>
        <!-- Header Navbar: style can be found in header.less -->
        <nav class="navbar navbar-static-top">
@@ -112,7 +117,7 @@
             if ($_SESSION['almacen'] == 1) {
               echo ' <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i> <span>Warehouse</span>
+            <i class="fa fa-laptop"></i> <span>Items</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -141,6 +146,66 @@
         </li>';
             }
             ?>
+
+<li class="treeview">
+                <a href="#">
+                  <i class="fa fa-product-hunt fa-fw"></i> Products Category<span class="fa arrow"></span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                  <ul class="treeview-menu">
+
+                    <?php
+                    $caq = mysqli_query($conn, "select * from categoria order by nombre asc");
+                    while ($catrow = mysqli_fetch_array($caq)) {
+                    ?>
+
+                       <li><a href="ventasfechacliente.php"></i></a></li>
+                       <form action='products2.php' method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $catrow['idcategoria']; ?>" />
+                         <input name="Detalles" type="submit" value="<?php echo $catrow['nombre']; ?>" class="btn btn-info btn-sm" style=" display: inline-block;
+     width: 70%;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     margin-left: 3px;
+     margin-right: 3px;
+     border-radius: 5px;  " /></form>
+
+                  <?php
+                    }
+
+                    ?>
+                  </ul>
+              </li>
+
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-product-hunt fa-fw"></i> Products By Warehouse<span class="fa arrow"></span>
+                  <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                  </span>
+                  <ul class="treeview-menu">
+
+                    <?php
+                    $caq = mysqli_query($conn, "select * from warehouse order by namewarehouse asc");
+                    while ($catrow = mysqli_fetch_array($caq)) {
+                    ?>
+
+                       <li><a href="ventasfechacliente.php"></i></a></li>
+                       <form action='products3.php' method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $catrow['idwarehouse']; ?>" />
+                         <input name="Detalles" type="submit" value="<?php echo $catrow['namewarehouse']; ?>" class="btn btn-info btn-sm" style=" display: inline-block;
+     width: 70%;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     margin-left: 3px;
+     margin-right: 3px;
+     border-radius: 5px;  " /></form>
+
+                  <?php
+                    }
+
+                    ?>
+                  </ul>
+              </li>
 
            <?php
             if ($_SESSION['ventas'] == 1) {
@@ -211,7 +276,7 @@
 
 <li class="treeview">
                 <a href="#">
-                  <i class="fa fa-product-hunt fa-fw"></i> Products prueba<span class="fa arrow"></span>
+                  <i class="fa fa-product-hunt fa-fw"></i> Products Category<span class="fa arrow"></span>
                   <span class="pull-right-container">
                     <i class="fa fa-angle-left pull-right"></i>
                   </span>
@@ -224,7 +289,7 @@
 
                        <li><a href="ventasfechacliente.php"></i></a></li>
                        <form action='products2.php' method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $catrow['idcategoria']; ?>" />
-                         <input name="Detalles" type="submit" value="<?php echo $catrow['nombre']; ?>" class="btn btn-success btn-sm" style=" display: inline-block;
+                         <input name="Detalles" type="submit" value="<?php echo $catrow['nombre']; ?>" class="btn btn-info btn-sm" style=" display: inline-block;
      width: 70%;
      margin-top: 3px;
      margin-bottom: 3px;

@@ -26,7 +26,7 @@ if ($_SESSION['almacen']==1) {
 <!--   <h1 class="box-title">Item <button class="btn btn-success" onclick="mostrarform(true)" id="btnagregar"><i class="fa fa-plus-circle"></i>Add</button> <a target="_blank" href="../reportes/rptarticulos.php"><button class="btn btn-info">Report</button></a></h1>
  --> 
  <div class="col-lg-12">
-            <h1 class="page-header">Products
+            <h1 class="page-header">Products by Warehouse
 				<span class="pull-right">
 					<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addproduct"><i class="fa fa-plus-circle"></i> Add Product</button>
 				</span>
@@ -63,7 +63,7 @@ if ($_SESSION['almacen']==1) {
                     INNER JOIN categoria c ON a.idcategoria=c.idcategoria 
                     INNER JOIN warehouse w on a.idwarehouse=w.idwarehouse
                    
-                    where a.idcategoria = \"$_POST[id_txt]\"  ORDER BY a.nombre asc" );
+                    where a.idwarehouse = \"$_POST[id_txt]\"  ORDER BY a.nombre asc" );
                     while($row=mysqli_fetch_array($pq)){
                         $pid=$row['idarticulo'];
                     ?>
